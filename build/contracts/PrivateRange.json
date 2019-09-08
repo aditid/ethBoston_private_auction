@@ -18,14 +18,14 @@
     "absolutePath": "@aztec/protocol/contracts/ACE/validators/privateRange/PrivateRange.sol",
     "exportedSymbols": {
       "PrivateRange": [
-        1707
+        1747
       ]
     },
-    "id": 1708,
+    "id": 1748,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1694,
+        "id": 1734,
         "literals": [
           "solidity",
           ">=",
@@ -41,10 +41,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/interfaces/PrivateRangeInterface.sol",
         "file": "../../../interfaces/PrivateRangeInterface.sol",
-        "id": 1695,
+        "id": 1735,
         "nodeType": "ImportDirective",
-        "scope": 1708,
-        "sourceUnit": 3209,
+        "scope": 1748,
+        "sourceUnit": 3249,
         "src": "33:55:12",
         "symbolAliases": [],
         "unitAlias": ""
@@ -52,10 +52,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/ACE/validators/privateRange/PrivateRangeABIEncoder.sol",
         "file": "./PrivateRangeABIEncoder.sol",
-        "id": 1696,
+        "id": 1736,
         "nodeType": "ImportDirective",
-        "scope": 1708,
-        "sourceUnit": 1716,
+        "scope": 1748,
+        "sourceUnit": 1756,
         "src": "89:38:12",
         "symbolAliases": [],
         "unitAlias": ""
@@ -66,22 +66,22 @@
         "contractKind": "contract",
         "documentation": "@title Library to validate AZTEC zero-knowledge private range proofs\n@author AZTEC\n@dev Don't include this as an internal library. This contract uses a static memory table to cache\nelliptic curve primitives and hashes.\nCalling this internally from another function will lead to memory mutation and undefined behaviour.\nThe intended use case is to call this externally via `staticcall`.\nExternal calls to OptimizedAZTEC can be treated as pure functions as this contract contains no\nstorage and makes no external calls (other than to precompiles)\nCopyright Spilsbury Holdings Ltd 2019. All rights reserved.*",
         "fullyImplemented": true,
-        "id": 1707,
+        "id": 1747,
         "linearizedBaseContracts": [
-          1707
+          1747
         ],
         "name": "PrivateRange",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 1705,
+              "id": 1745,
               "nodeType": "Block",
               "src": "1116:15816:12",
               "statements": [
                 {
                   "externalReferences": [],
-                  "id": 1699,
+                  "id": 1739,
                   "nodeType": "InlineAssembly",
                   "operations": "{\n    validatePrivateRange()\n    mstore(0x40, 0x60)\n    function validatePrivateRange()\n    {\n        mstore(0x80, calldataload(0x44))\n        mstore(0xa0, calldataload(0x64))\n        let notes := add(0x104, calldataload(0x144))\n        let m := 2\n        let n := 3\n        let gen_order := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001\n        let challenge := mod(calldataload(0x124), gen_order)\n        mstore(0x2a0, calldataload(0x24))\n        mstore(0x2c0, 0)\n        mstore(0x2e0, 0)\n        hashCommitments(notes, n)\n        let b := add(0x300, mul(n, 0x80))\n        for {\n            let i := 0\n        }\n        lt(i, n)\n        {\n            i := add(i, 0x01)\n        }\n        {\n            let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n            let k := calldataload(noteIndex)\n            let a := calldataload(add(noteIndex, 0x20))\n            let c := challenge\n            switch gt(i, 1)\n            case 1 {\n                k := addmod(calldataload(sub(noteIndex, 0x180)), sub(gen_order, calldataload(sub(noteIndex, 0xc0))), gen_order)\n            }\n            case 0 {\n                k := calldataload(noteIndex)\n            }\n            validateCommitment(noteIndex, k, a)\n            if i\n            {\n                let x := mod(mload(0x00), gen_order)\n                k := mulmod(k, x, gen_order)\n                a := mulmod(a, x, gen_order)\n                c := mulmod(challenge, x, gen_order)\n                mstore(0x00, keccak256(0x00, 0x20))\n            }\n            calldatacopy(0xe0, add(noteIndex, 0x80), 0x40)\n            calldatacopy(0x20, add(noteIndex, 0x40), 0x40)\n            mstore(0x120, sub(gen_order, c))\n            mstore(0x60, k)\n            mstore(0xc0, a)\n            let result := staticcall(gas(), 7, 0xe0, 0x60, 0x1a0, 0x40)\n            result := and(result, staticcall(gas(), 7, 0x20, 0x60, 0x120, 0x40))\n            result := and(result, staticcall(gas(), 7, 0x80, 0x60, 0x160, 0x40))\n            result := and(result, staticcall(gas(), 6, 0x120, 0x80, 0x160, 0x40))\n            result := and(result, staticcall(gas(), 6, 0x160, 0x80, b, 0x40))\n            if eq(i, 0)\n            {\n                mstore(0x260, mload(0x20))\n                mstore(0x280, mload(0x40))\n                mstore(0x1e0, mload(0xe0))\n                mstore(0x200, sub(0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47, mload(0x100)))\n            }\n            if gt(i, 0)\n            {\n                mstore(0x60, c)\n                result := and(result, and(and(staticcall(gas(), 6, 0x1a0, 0x80, 0x1e0, 0x40), staticcall(gas(), 6, 0x220, 0x80, 0x260, 0x40)), staticcall(gas(), 7, 0x20, 0x60, 0x220, 0x40)))\n            }\n            if iszero(result)\n            {\n                mstore(0x00, 400)\n                revert(0x00, 0x20)\n            }\n            b := add(b, 0x40)\n        }\n        validatePairing(0x84)\n        let expected := mod(keccak256(0x2a0, sub(b, 0x2a0)), gen_order)\n        if iszero(eq(expected, challenge))\n        {\n            mstore(0x00, 404)\n            revert(0x00, 0x20)\n        }\n    }\n    function validatePairing(t2)\n    {\n        let field_order := 0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47\n        let t2_x_1 := calldataload(t2)\n        let t2_x_2 := calldataload(add(t2, 0x20))\n        let t2_y_1 := calldataload(add(t2, 0x40))\n        let t2_y_2 := calldataload(add(t2, 0x60))\n        if or(or(or(or(or(or(or(iszero(t2_x_1), iszero(t2_x_2)), iszero(t2_y_1)), iszero(t2_y_2)), eq(t2_x_1, 0x1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed)), eq(t2_x_2, 0x198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c2)), eq(t2_y_1, 0x12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa)), eq(t2_y_2, 0x90689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n        mstore(0x20, mload(0x1e0))\n        mstore(0x40, mload(0x200))\n        mstore(0x80, 0x1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed)\n        mstore(0x60, 0x198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c2)\n        mstore(0xc0, 0x12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa)\n        mstore(0xa0, 0x90689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b)\n        mstore(0xe0, mload(0x260))\n        mstore(0x100, mload(0x280))\n        mstore(0x140, t2_x_1)\n        mstore(0x120, t2_x_2)\n        mstore(0x180, t2_y_1)\n        mstore(0x160, t2_y_2)\n        let success := staticcall(gas(), 8, 0x20, 0x180, 0x20, 0x20)\n        if or(iszero(success), iszero(mload(0x20)))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n    }\n    function validateCommitment(note, k, a)\n    {\n        let gen_order := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001\n        let field_order := 0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47\n        let gammaX := calldataload(add(note, 0x40))\n        let gammaY := calldataload(add(note, 0x60))\n        let sigmaX := calldataload(add(note, 0x80))\n        let sigmaY := calldataload(add(note, 0xa0))\n        if iszero(and(and(and(eq(mod(a, gen_order), a), gt(a, 1)), and(eq(mod(k, gen_order), k), gt(k, 1))), and(eq(addmod(mulmod(mulmod(sigmaX, sigmaX, field_order), sigmaX, field_order), 3, field_order), mulmod(sigmaY, sigmaY, field_order)), eq(addmod(mulmod(mulmod(gammaX, gammaX, field_order), gammaX, field_order), 3, field_order), mulmod(gammaY, gammaY, field_order)))))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n    }\n    function hashCommitments(notes, n)\n    {\n        for {\n            let i := 0\n        }\n        lt(i, n)\n        {\n            i := add(i, 0x01)\n        }\n        {\n            let index := add(add(notes, mul(i, 0xc0)), 0x60)\n            calldatacopy(add(0x300, mul(i, 0x80)), index, 0x80)\n        }\n        mstore(0x00, keccak256(0x300, mul(n, 0x80)))\n    }\n}",
                   "src": "1126:15783:12"
@@ -94,32 +94,32 @@
                       "argumentTypes": [],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 1700,
+                        "id": 1740,
                         "name": "PrivateRangeABIEncoder",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1715,
+                        "referencedDeclaration": 1755,
                         "src": "16887:22:12",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_PrivateRangeABIEncoder_$1715_$",
+                          "typeIdentifier": "t_type$_t_contract$_PrivateRangeABIEncoder_$1755_$",
                           "typeString": "type(library PrivateRangeABIEncoder)"
                         }
                       },
-                      "id": 1702,
+                      "id": 1742,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "encodeAndExit",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1714,
+                      "referencedDeclaration": 1754,
                       "src": "16887:36:12",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$__$returns$__$",
                         "typeString": "function () pure"
                       }
                     },
-                    "id": 1703,
+                    "id": 1743,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -133,39 +133,39 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1704,
+                  "id": 1744,
                   "nodeType": "ExpressionStatement",
                   "src": "16887:38:12"
                 }
               ]
             },
             "documentation": "@dev AZTEC will take any transaction sent to it and attempt to validate a zero knowledge proof.\nIf the proof is not valid, the transaction throws.\n@notice See AZTECInterface for how method calls should be constructed.*",
-            "id": 1706,
+            "id": 1746,
             "implemented": true,
             "kind": "fallback",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1697,
+              "id": 1737,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1104:2:12"
             },
             "returnParameters": {
-              "id": 1698,
+              "id": 1738,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1116:0:12"
             },
-            "scope": 1707,
+            "scope": 1747,
             "src": "1096:15836:12",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 1708,
+        "scope": 1748,
         "src": "771:16163:12"
       }
     ],
@@ -175,14 +175,14 @@
     "absolutePath": "@aztec/protocol/contracts/ACE/validators/privateRange/PrivateRange.sol",
     "exportedSymbols": {
       "PrivateRange": [
-        1707
+        1747
       ]
     },
-    "id": 1708,
+    "id": 1748,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1694,
+        "id": 1734,
         "literals": [
           "solidity",
           ">=",
@@ -198,10 +198,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/interfaces/PrivateRangeInterface.sol",
         "file": "../../../interfaces/PrivateRangeInterface.sol",
-        "id": 1695,
+        "id": 1735,
         "nodeType": "ImportDirective",
-        "scope": 1708,
-        "sourceUnit": 3209,
+        "scope": 1748,
+        "sourceUnit": 3249,
         "src": "33:55:12",
         "symbolAliases": [],
         "unitAlias": ""
@@ -209,10 +209,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/ACE/validators/privateRange/PrivateRangeABIEncoder.sol",
         "file": "./PrivateRangeABIEncoder.sol",
-        "id": 1696,
+        "id": 1736,
         "nodeType": "ImportDirective",
-        "scope": 1708,
-        "sourceUnit": 1716,
+        "scope": 1748,
+        "sourceUnit": 1756,
         "src": "89:38:12",
         "symbolAliases": [],
         "unitAlias": ""
@@ -223,22 +223,22 @@
         "contractKind": "contract",
         "documentation": "@title Library to validate AZTEC zero-knowledge private range proofs\n@author AZTEC\n@dev Don't include this as an internal library. This contract uses a static memory table to cache\nelliptic curve primitives and hashes.\nCalling this internally from another function will lead to memory mutation and undefined behaviour.\nThe intended use case is to call this externally via `staticcall`.\nExternal calls to OptimizedAZTEC can be treated as pure functions as this contract contains no\nstorage and makes no external calls (other than to precompiles)\nCopyright Spilsbury Holdings Ltd 2019. All rights reserved.*",
         "fullyImplemented": true,
-        "id": 1707,
+        "id": 1747,
         "linearizedBaseContracts": [
-          1707
+          1747
         ],
         "name": "PrivateRange",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 1705,
+              "id": 1745,
               "nodeType": "Block",
               "src": "1116:15816:12",
               "statements": [
                 {
                   "externalReferences": [],
-                  "id": 1699,
+                  "id": 1739,
                   "nodeType": "InlineAssembly",
                   "operations": "{\n    validatePrivateRange()\n    mstore(0x40, 0x60)\n    function validatePrivateRange()\n    {\n        mstore(0x80, calldataload(0x44))\n        mstore(0xa0, calldataload(0x64))\n        let notes := add(0x104, calldataload(0x144))\n        let m := 2\n        let n := 3\n        let gen_order := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001\n        let challenge := mod(calldataload(0x124), gen_order)\n        mstore(0x2a0, calldataload(0x24))\n        mstore(0x2c0, 0)\n        mstore(0x2e0, 0)\n        hashCommitments(notes, n)\n        let b := add(0x300, mul(n, 0x80))\n        for {\n            let i := 0\n        }\n        lt(i, n)\n        {\n            i := add(i, 0x01)\n        }\n        {\n            let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n            let k := calldataload(noteIndex)\n            let a := calldataload(add(noteIndex, 0x20))\n            let c := challenge\n            switch gt(i, 1)\n            case 1 {\n                k := addmod(calldataload(sub(noteIndex, 0x180)), sub(gen_order, calldataload(sub(noteIndex, 0xc0))), gen_order)\n            }\n            case 0 {\n                k := calldataload(noteIndex)\n            }\n            validateCommitment(noteIndex, k, a)\n            if i\n            {\n                let x := mod(mload(0x00), gen_order)\n                k := mulmod(k, x, gen_order)\n                a := mulmod(a, x, gen_order)\n                c := mulmod(challenge, x, gen_order)\n                mstore(0x00, keccak256(0x00, 0x20))\n            }\n            calldatacopy(0xe0, add(noteIndex, 0x80), 0x40)\n            calldatacopy(0x20, add(noteIndex, 0x40), 0x40)\n            mstore(0x120, sub(gen_order, c))\n            mstore(0x60, k)\n            mstore(0xc0, a)\n            let result := staticcall(gas(), 7, 0xe0, 0x60, 0x1a0, 0x40)\n            result := and(result, staticcall(gas(), 7, 0x20, 0x60, 0x120, 0x40))\n            result := and(result, staticcall(gas(), 7, 0x80, 0x60, 0x160, 0x40))\n            result := and(result, staticcall(gas(), 6, 0x120, 0x80, 0x160, 0x40))\n            result := and(result, staticcall(gas(), 6, 0x160, 0x80, b, 0x40))\n            if eq(i, 0)\n            {\n                mstore(0x260, mload(0x20))\n                mstore(0x280, mload(0x40))\n                mstore(0x1e0, mload(0xe0))\n                mstore(0x200, sub(0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47, mload(0x100)))\n            }\n            if gt(i, 0)\n            {\n                mstore(0x60, c)\n                result := and(result, and(and(staticcall(gas(), 6, 0x1a0, 0x80, 0x1e0, 0x40), staticcall(gas(), 6, 0x220, 0x80, 0x260, 0x40)), staticcall(gas(), 7, 0x20, 0x60, 0x220, 0x40)))\n            }\n            if iszero(result)\n            {\n                mstore(0x00, 400)\n                revert(0x00, 0x20)\n            }\n            b := add(b, 0x40)\n        }\n        validatePairing(0x84)\n        let expected := mod(keccak256(0x2a0, sub(b, 0x2a0)), gen_order)\n        if iszero(eq(expected, challenge))\n        {\n            mstore(0x00, 404)\n            revert(0x00, 0x20)\n        }\n    }\n    function validatePairing(t2)\n    {\n        let field_order := 0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47\n        let t2_x_1 := calldataload(t2)\n        let t2_x_2 := calldataload(add(t2, 0x20))\n        let t2_y_1 := calldataload(add(t2, 0x40))\n        let t2_y_2 := calldataload(add(t2, 0x60))\n        if or(or(or(or(or(or(or(iszero(t2_x_1), iszero(t2_x_2)), iszero(t2_y_1)), iszero(t2_y_2)), eq(t2_x_1, 0x1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed)), eq(t2_x_2, 0x198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c2)), eq(t2_y_1, 0x12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa)), eq(t2_y_2, 0x90689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n        mstore(0x20, mload(0x1e0))\n        mstore(0x40, mload(0x200))\n        mstore(0x80, 0x1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed)\n        mstore(0x60, 0x198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c2)\n        mstore(0xc0, 0x12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa)\n        mstore(0xa0, 0x90689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b)\n        mstore(0xe0, mload(0x260))\n        mstore(0x100, mload(0x280))\n        mstore(0x140, t2_x_1)\n        mstore(0x120, t2_x_2)\n        mstore(0x180, t2_y_1)\n        mstore(0x160, t2_y_2)\n        let success := staticcall(gas(), 8, 0x20, 0x180, 0x20, 0x20)\n        if or(iszero(success), iszero(mload(0x20)))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n    }\n    function validateCommitment(note, k, a)\n    {\n        let gen_order := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001\n        let field_order := 0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47\n        let gammaX := calldataload(add(note, 0x40))\n        let gammaY := calldataload(add(note, 0x60))\n        let sigmaX := calldataload(add(note, 0x80))\n        let sigmaY := calldataload(add(note, 0xa0))\n        if iszero(and(and(and(eq(mod(a, gen_order), a), gt(a, 1)), and(eq(mod(k, gen_order), k), gt(k, 1))), and(eq(addmod(mulmod(mulmod(sigmaX, sigmaX, field_order), sigmaX, field_order), 3, field_order), mulmod(sigmaY, sigmaY, field_order)), eq(addmod(mulmod(mulmod(gammaX, gammaX, field_order), gammaX, field_order), 3, field_order), mulmod(gammaY, gammaY, field_order)))))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n    }\n    function hashCommitments(notes, n)\n    {\n        for {\n            let i := 0\n        }\n        lt(i, n)\n        {\n            i := add(i, 0x01)\n        }\n        {\n            let index := add(add(notes, mul(i, 0xc0)), 0x60)\n            calldatacopy(add(0x300, mul(i, 0x80)), index, 0x80)\n        }\n        mstore(0x00, keccak256(0x300, mul(n, 0x80)))\n    }\n}",
                   "src": "1126:15783:12"
@@ -251,32 +251,32 @@
                       "argumentTypes": [],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 1700,
+                        "id": 1740,
                         "name": "PrivateRangeABIEncoder",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1715,
+                        "referencedDeclaration": 1755,
                         "src": "16887:22:12",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_PrivateRangeABIEncoder_$1715_$",
+                          "typeIdentifier": "t_type$_t_contract$_PrivateRangeABIEncoder_$1755_$",
                           "typeString": "type(library PrivateRangeABIEncoder)"
                         }
                       },
-                      "id": 1702,
+                      "id": 1742,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "encodeAndExit",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1714,
+                      "referencedDeclaration": 1754,
                       "src": "16887:36:12",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$__$returns$__$",
                         "typeString": "function () pure"
                       }
                     },
-                    "id": 1703,
+                    "id": 1743,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -290,39 +290,39 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1704,
+                  "id": 1744,
                   "nodeType": "ExpressionStatement",
                   "src": "16887:38:12"
                 }
               ]
             },
             "documentation": "@dev AZTEC will take any transaction sent to it and attempt to validate a zero knowledge proof.\nIf the proof is not valid, the transaction throws.\n@notice See AZTECInterface for how method calls should be constructed.*",
-            "id": 1706,
+            "id": 1746,
             "implemented": true,
             "kind": "fallback",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1697,
+              "id": 1737,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1104:2:12"
             },
             "returnParameters": {
-              "id": 1698,
+              "id": 1738,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1116:0:12"
             },
-            "scope": 1707,
+            "scope": 1747,
             "src": "1096:15836:12",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 1708,
+        "scope": 1748,
         "src": "771:16163:12"
       }
     ],
@@ -344,10 +344,16 @@
       "links": {},
       "address": "0xc71D8d77762f7066B37Dd8fD240E69C46D3be689",
       "transactionHash": "0x6148e15421f5ba3582b385e2163b078ed57becd5a96b0986f27e4af94569c267"
+    },
+    "1567943518950": {
+      "events": {},
+      "links": {},
+      "address": "0x42cdD275Cc97F11333F52738C55566AED47eC37b",
+      "transactionHash": "0xb4f06ff6ac22ae96ad8662086d04bebae6f6a89f942ff2f5374599d7b30868bd"
     }
   },
   "schemaVersion": "3.0.15",
-  "updatedAt": "2019-09-08T01:44:16.027Z",
+  "updatedAt": "2019-09-08T13:28:09.354Z",
   "devdoc": {
     "author": "AZTEC",
     "details": "Don't include this as an internal library. This contract uses a static memory table to cache elliptic curve primitives and hashes. Calling this internally from another function will lead to memory mutation and undefined behaviour. The intended use case is to call this externally via `staticcall`. External calls to OptimizedAZTEC can be treated as pure functions as this contract contains no storage and makes no external calls (other than to precompiles) Copyright Spilsbury Holdings Ltd 2019. All rights reserved.*",

@@ -592,14 +592,14 @@
     "absolutePath": "@aztec/protocol/contracts/ERC1724/ZkAssetMintable.sol",
     "exportedSymbols": {
       "ZkAssetMintable": [
-        1813
+        1853
       ]
     },
-    "id": 1814,
+    "id": 1854,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1788,
+        "id": 1828,
         "literals": [
           "solidity",
           ">=",
@@ -615,10 +615,10 @@
       {
         "absolutePath": "openzeppelin-solidity/contracts/math/SafeMath.sol",
         "file": "openzeppelin-solidity/contracts/math/SafeMath.sol",
-        "id": 1789,
+        "id": 1829,
         "nodeType": "ImportDirective",
-        "scope": 1814,
-        "sourceUnit": 3652,
+        "scope": 1854,
+        "sourceUnit": 3692,
         "src": "35:59:19",
         "symbolAliases": [],
         "unitAlias": ""
@@ -626,10 +626,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/ACE/ACE.sol",
         "file": "../ACE/ACE.sol",
-        "id": 1790,
+        "id": 1830,
         "nodeType": "ImportDirective",
-        "scope": 1814,
-        "sourceUnit": 914,
+        "scope": 1854,
+        "sourceUnit": 954,
         "src": "96:24:19",
         "symbolAliases": [],
         "unitAlias": ""
@@ -637,10 +637,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/ERC20/ERC20Mintable.sol",
         "file": "../ERC20/ERC20Mintable.sol",
-        "id": 1791,
+        "id": 1831,
         "nodeType": "ImportDirective",
-        "scope": 1814,
-        "sourceUnit": 3021,
+        "scope": 1854,
+        "sourceUnit": 3061,
         "src": "121:36:19",
         "symbolAliases": [],
         "unitAlias": ""
@@ -648,10 +648,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/libs/LibEIP712.sol",
         "file": "../libs/LibEIP712.sol",
-        "id": 1792,
+        "id": 1832,
         "nodeType": "ImportDirective",
-        "scope": 1814,
-        "sourceUnit": 3327,
+        "scope": 1854,
+        "sourceUnit": 3367,
         "src": "158:31:19",
         "symbolAliases": [],
         "unitAlias": ""
@@ -659,10 +659,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/libs/ProofUtils.sol",
         "file": "../libs/ProofUtils.sol",
-        "id": 1793,
+        "id": 1833,
         "nodeType": "ImportDirective",
-        "scope": 1814,
-        "sourceUnit": 3425,
+        "scope": 1854,
+        "sourceUnit": 3465,
         "src": "190:32:19",
         "symbolAliases": [],
         "unitAlias": ""
@@ -670,10 +670,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/ERC1724/base/ZkAssetMintableBase.sol",
         "file": "./base/ZkAssetMintableBase.sol",
-        "id": 1794,
+        "id": 1834,
         "nodeType": "ImportDirective",
-        "scope": 1814,
-        "sourceUnit": 2867,
+        "scope": 1854,
+        "sourceUnit": 2907,
         "src": "223:40:19",
         "symbolAliases": [],
         "unitAlias": ""
@@ -684,56 +684,56 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 1795,
+              "id": 1835,
               "name": "ZkAssetMintableBase",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2866,
+              "referencedDeclaration": 2906,
               "src": "566:19:19",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ZkAssetMintableBase_$2866",
+                "typeIdentifier": "t_contract$_ZkAssetMintableBase_$2906",
                 "typeString": "contract ZkAssetMintableBase"
               }
             },
-            "id": 1796,
+            "id": 1836,
             "nodeType": "InheritanceSpecifier",
             "src": "566:19:19"
           }
         ],
         "contractDependencies": [
-          2499,
-          2866,
-          2997,
-          3071,
-          3151,
-          3326,
-          3762
+          2539,
+          2906,
+          3037,
+          3111,
+          3191,
+          3366,
+          3802
         ],
         "contractKind": "contract",
         "documentation": "@title ZkAssetMintable\n@author AZTEC\n@dev A contract defining the standard interface and behaviours of a mintable confidential asset.\nThe ownership values and transfer values are encrypted.\nCopyright Spilsbury Holdings Ltd 2019. All rights reserved.*",
         "fullyImplemented": true,
-        "id": 1813,
+        "id": 1853,
         "linearizedBaseContracts": [
-          1813,
-          2866,
-          2997,
-          3762,
-          2499,
-          3326,
-          3071,
-          3151
+          1853,
+          2906,
+          3037,
+          3802,
+          2539,
+          3366,
+          3111,
+          3191
         ],
         "name": "ZkAssetMintable",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 1811,
+              "id": 1851,
               "nodeType": "Block",
               "src": "847:7:19",
               "statements": []
             },
             "documentation": null,
-            "id": 1812,
+            "id": 1852,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [
@@ -741,11 +741,11 @@
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 1805,
+                    "id": 1845,
                     "name": "_aceAddress",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1798,
+                    "referencedDeclaration": 1838,
                     "src": "743:11:19",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -754,11 +754,11 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 1806,
+                    "id": 1846,
                     "name": "_linkedTokenAddress",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1800,
+                    "referencedDeclaration": 1840,
                     "src": "764:19:19",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -767,11 +767,11 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 1807,
+                    "id": 1847,
                     "name": "_scalingFactor",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1802,
+                    "referencedDeclaration": 1842,
                     "src": "793:14:19",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -781,7 +781,7 @@
                   {
                     "argumentTypes": null,
                     "hexValue": "74727565",
-                    "id": 1808,
+                    "id": 1848,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -797,17 +797,17 @@
                     "value": "true"
                   }
                 ],
-                "id": 1809,
+                "id": 1849,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 1804,
+                  "id": 1844,
                   "name": "ZkAssetOwnableBase",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2997,
+                  "referencedDeclaration": 3037,
                   "src": "715:18:19",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_ZkAssetOwnableBase_$2997_$",
+                    "typeIdentifier": "t_type$_t_contract$_ZkAssetOwnableBase_$3037_$",
                     "typeString": "type(contract ZkAssetOwnableBase)"
                   }
                 },
@@ -818,15 +818,15 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1803,
+              "id": 1843,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1798,
+                  "id": 1838,
                   "name": "_aceAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1812,
+                  "scope": 1852,
                   "src": "613:19:19",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -835,7 +835,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1797,
+                    "id": 1837,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "613:7:19",
@@ -850,10 +850,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1800,
+                  "id": 1840,
                   "name": "_linkedTokenAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1812,
+                  "scope": 1852,
                   "src": "642:27:19",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -862,7 +862,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1799,
+                    "id": 1839,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "642:7:19",
@@ -877,10 +877,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1802,
+                  "id": 1842,
                   "name": "_scalingFactor",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1812,
+                  "scope": 1852,
                   "src": "679:22:19",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -889,7 +889,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1801,
+                    "id": 1841,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "679:7:19",
@@ -905,19 +905,19 @@
               "src": "603:104:19"
             },
             "returnParameters": {
-              "id": 1810,
+              "id": 1850,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "847:0:19"
             },
-            "scope": 1813,
+            "scope": 1853,
             "src": "592:262:19",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 1814,
+        "scope": 1854,
         "src": "538:318:19"
       }
     ],
@@ -927,14 +927,14 @@
     "absolutePath": "@aztec/protocol/contracts/ERC1724/ZkAssetMintable.sol",
     "exportedSymbols": {
       "ZkAssetMintable": [
-        1813
+        1853
       ]
     },
-    "id": 1814,
+    "id": 1854,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1788,
+        "id": 1828,
         "literals": [
           "solidity",
           ">=",
@@ -950,10 +950,10 @@
       {
         "absolutePath": "openzeppelin-solidity/contracts/math/SafeMath.sol",
         "file": "openzeppelin-solidity/contracts/math/SafeMath.sol",
-        "id": 1789,
+        "id": 1829,
         "nodeType": "ImportDirective",
-        "scope": 1814,
-        "sourceUnit": 3652,
+        "scope": 1854,
+        "sourceUnit": 3692,
         "src": "35:59:19",
         "symbolAliases": [],
         "unitAlias": ""
@@ -961,10 +961,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/ACE/ACE.sol",
         "file": "../ACE/ACE.sol",
-        "id": 1790,
+        "id": 1830,
         "nodeType": "ImportDirective",
-        "scope": 1814,
-        "sourceUnit": 914,
+        "scope": 1854,
+        "sourceUnit": 954,
         "src": "96:24:19",
         "symbolAliases": [],
         "unitAlias": ""
@@ -972,10 +972,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/ERC20/ERC20Mintable.sol",
         "file": "../ERC20/ERC20Mintable.sol",
-        "id": 1791,
+        "id": 1831,
         "nodeType": "ImportDirective",
-        "scope": 1814,
-        "sourceUnit": 3021,
+        "scope": 1854,
+        "sourceUnit": 3061,
         "src": "121:36:19",
         "symbolAliases": [],
         "unitAlias": ""
@@ -983,10 +983,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/libs/LibEIP712.sol",
         "file": "../libs/LibEIP712.sol",
-        "id": 1792,
+        "id": 1832,
         "nodeType": "ImportDirective",
-        "scope": 1814,
-        "sourceUnit": 3327,
+        "scope": 1854,
+        "sourceUnit": 3367,
         "src": "158:31:19",
         "symbolAliases": [],
         "unitAlias": ""
@@ -994,10 +994,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/libs/ProofUtils.sol",
         "file": "../libs/ProofUtils.sol",
-        "id": 1793,
+        "id": 1833,
         "nodeType": "ImportDirective",
-        "scope": 1814,
-        "sourceUnit": 3425,
+        "scope": 1854,
+        "sourceUnit": 3465,
         "src": "190:32:19",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1005,10 +1005,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/ERC1724/base/ZkAssetMintableBase.sol",
         "file": "./base/ZkAssetMintableBase.sol",
-        "id": 1794,
+        "id": 1834,
         "nodeType": "ImportDirective",
-        "scope": 1814,
-        "sourceUnit": 2867,
+        "scope": 1854,
+        "sourceUnit": 2907,
         "src": "223:40:19",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1019,56 +1019,56 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 1795,
+              "id": 1835,
               "name": "ZkAssetMintableBase",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2866,
+              "referencedDeclaration": 2906,
               "src": "566:19:19",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ZkAssetMintableBase_$2866",
+                "typeIdentifier": "t_contract$_ZkAssetMintableBase_$2906",
                 "typeString": "contract ZkAssetMintableBase"
               }
             },
-            "id": 1796,
+            "id": 1836,
             "nodeType": "InheritanceSpecifier",
             "src": "566:19:19"
           }
         ],
         "contractDependencies": [
-          2499,
-          2866,
-          2997,
-          3071,
-          3151,
-          3326,
-          3762
+          2539,
+          2906,
+          3037,
+          3111,
+          3191,
+          3366,
+          3802
         ],
         "contractKind": "contract",
         "documentation": "@title ZkAssetMintable\n@author AZTEC\n@dev A contract defining the standard interface and behaviours of a mintable confidential asset.\nThe ownership values and transfer values are encrypted.\nCopyright Spilsbury Holdings Ltd 2019. All rights reserved.*",
         "fullyImplemented": true,
-        "id": 1813,
+        "id": 1853,
         "linearizedBaseContracts": [
-          1813,
-          2866,
-          2997,
-          3762,
-          2499,
-          3326,
-          3071,
-          3151
+          1853,
+          2906,
+          3037,
+          3802,
+          2539,
+          3366,
+          3111,
+          3191
         ],
         "name": "ZkAssetMintable",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 1811,
+              "id": 1851,
               "nodeType": "Block",
               "src": "847:7:19",
               "statements": []
             },
             "documentation": null,
-            "id": 1812,
+            "id": 1852,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [
@@ -1076,11 +1076,11 @@
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 1805,
+                    "id": 1845,
                     "name": "_aceAddress",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1798,
+                    "referencedDeclaration": 1838,
                     "src": "743:11:19",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1089,11 +1089,11 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 1806,
+                    "id": 1846,
                     "name": "_linkedTokenAddress",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1800,
+                    "referencedDeclaration": 1840,
                     "src": "764:19:19",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1102,11 +1102,11 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 1807,
+                    "id": 1847,
                     "name": "_scalingFactor",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1802,
+                    "referencedDeclaration": 1842,
                     "src": "793:14:19",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -1116,7 +1116,7 @@
                   {
                     "argumentTypes": null,
                     "hexValue": "74727565",
-                    "id": 1808,
+                    "id": 1848,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -1132,17 +1132,17 @@
                     "value": "true"
                   }
                 ],
-                "id": 1809,
+                "id": 1849,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 1804,
+                  "id": 1844,
                   "name": "ZkAssetOwnableBase",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2997,
+                  "referencedDeclaration": 3037,
                   "src": "715:18:19",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_ZkAssetOwnableBase_$2997_$",
+                    "typeIdentifier": "t_type$_t_contract$_ZkAssetOwnableBase_$3037_$",
                     "typeString": "type(contract ZkAssetOwnableBase)"
                   }
                 },
@@ -1153,15 +1153,15 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1803,
+              "id": 1843,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1798,
+                  "id": 1838,
                   "name": "_aceAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1812,
+                  "scope": 1852,
                   "src": "613:19:19",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1170,7 +1170,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1797,
+                    "id": 1837,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "613:7:19",
@@ -1185,10 +1185,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1800,
+                  "id": 1840,
                   "name": "_linkedTokenAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1812,
+                  "scope": 1852,
                   "src": "642:27:19",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1197,7 +1197,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1799,
+                    "id": 1839,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "642:7:19",
@@ -1212,10 +1212,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1802,
+                  "id": 1842,
                   "name": "_scalingFactor",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1812,
+                  "scope": 1852,
                   "src": "679:22:19",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1224,7 +1224,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1801,
+                    "id": 1841,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "679:7:19",
@@ -1240,19 +1240,19 @@
               "src": "603:104:19"
             },
             "returnParameters": {
-              "id": 1810,
+              "id": 1850,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "847:0:19"
             },
-            "scope": 1813,
+            "scope": 1853,
             "src": "592:262:19",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 1814,
+        "scope": 1854,
         "src": "538:318:19"
       }
     ],
@@ -1650,10 +1650,204 @@
       "links": {},
       "address": "0x3afb9F35893BCA27FE25606366c165a1e866888f",
       "transactionHash": "0xd43014e09d28342bd02d0547246e5d731a995ace7d12eaf5527e40d4b14c70ba"
+    },
+    "1567943518950": {
+      "events": {
+        "0x6bc2dccbfc40ed5201f2896c7bc80fa4529202979a6c4195e7c95548b7bdedcb": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "noteHash",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "noteData",
+              "type": "bytes"
+            }
+          ],
+          "name": "UpdateTotalMinted",
+          "type": "event",
+          "signature": "0x6bc2dccbfc40ed5201f2896c7bc80fa4529202979a6c4195e7c95548b7bdedcb"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event",
+          "signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+        },
+        "0xca576e79bcb5c4a0045d9d596a80c733c3997559f688f69e5c03bd737d885b86": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "aceAddress",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "linkedTokenAddress",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "scalingFactor",
+              "type": "uint256"
+            },
+            {
+              "indexed": true,
+              "name": "_canAdjustSupply",
+              "type": "bool"
+            },
+            {
+              "indexed": false,
+              "name": "_canConvert",
+              "type": "bool"
+            }
+          ],
+          "name": "CreateZkAsset",
+          "type": "event",
+          "signature": "0xca576e79bcb5c4a0045d9d596a80c733c3997559f688f69e5c03bd737d885b86"
+        },
+        "0x0b328bb83ddd8094b92e850e4a6a7e25d474ef81760d423ca6c5bac4f75ac5f2": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "noteRegistryId",
+              "type": "uint256"
+            }
+          ],
+          "name": "CreateNoteRegistry",
+          "type": "event",
+          "signature": "0x0b328bb83ddd8094b92e850e4a6a7e25d474ef81760d423ca6c5bac4f75ac5f2"
+        },
+        "0x5ffb3072e4515cf3bfae8b16be9dff6313cf7c313a0c26faafe6971d8c7585f1": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "noteHash",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "metadata",
+              "type": "bytes"
+            }
+          ],
+          "name": "CreateNote",
+          "type": "event",
+          "signature": "0x5ffb3072e4515cf3bfae8b16be9dff6313cf7c313a0c26faafe6971d8c7585f1"
+        },
+        "0xebd4bb7b61198df63305dd538f077db9df9b14339d8a6221e301487770d79227": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "noteHash",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "metadata",
+              "type": "bytes"
+            }
+          ],
+          "name": "DestroyNote",
+          "type": "event",
+          "signature": "0xebd4bb7b61198df63305dd538f077db9df9b14339d8a6221e301487770d79227"
+        },
+        "0xfed3b27b73d78d9d1f344bbbf25f7af35e0ac4d6cf8193604ce18082168e461a": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "value",
+              "type": "uint256"
+            }
+          ],
+          "name": "ConvertTokens",
+          "type": "event",
+          "signature": "0xfed3b27b73d78d9d1f344bbbf25f7af35e0ac4d6cf8193604ce18082168e461a"
+        },
+        "0x60213c45c34d8b94e495fd5871fdea7a7511f659e884ea25a0c8843b7f98bfad": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "value",
+              "type": "uint256"
+            }
+          ],
+          "name": "RedeemTokens",
+          "type": "event",
+          "signature": "0x60213c45c34d8b94e495fd5871fdea7a7511f659e884ea25a0c8843b7f98bfad"
+        },
+        "0x5c5b88831bccbd4efdc04b97a0bcb2a743b216c3cc74b4520ca833778ec87dfb": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "noteHash",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "metadata",
+              "type": "bytes"
+            }
+          ],
+          "name": "UpdateNoteMetadata",
+          "type": "event",
+          "signature": "0x5c5b88831bccbd4efdc04b97a0bcb2a743b216c3cc74b4520ca833778ec87dfb"
+        }
+      },
+      "links": {},
+      "address": "0x17123a8035761bFAd40cA166261d003b978b8314",
+      "transactionHash": "0x473f1b29ec4a66552b2a9b3e4162db04904cb7232b7404c000b562f43411840b"
     }
   },
   "schemaVersion": "3.0.15",
-  "updatedAt": "2019-09-08T01:44:16.749Z",
+  "updatedAt": "2019-09-08T13:28:10.413Z",
   "devdoc": {
     "author": "AZTEC",
     "details": "A contract defining the standard interface and behaviours of a mintable confidential asset. The ownership values and transfer values are encrypted. Copyright Spilsbury Holdings Ltd 2019. All rights reserved.*",

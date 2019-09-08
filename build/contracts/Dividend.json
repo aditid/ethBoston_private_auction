@@ -18,14 +18,14 @@
     "absolutePath": "@aztec/protocol/contracts/ACE/validators/dividend/Dividend.sol",
     "exportedSymbols": {
       "Dividend": [
-        1635
+        1675
       ]
     },
-    "id": 1636,
+    "id": 1676,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1622,
+        "id": 1662,
         "literals": [
           "solidity",
           ">=",
@@ -41,10 +41,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/ACE/validators/dividend/DividendABIEncoder.sol",
         "file": "./DividendABIEncoder.sol",
-        "id": 1623,
+        "id": 1663,
         "nodeType": "ImportDirective",
-        "scope": 1636,
-        "sourceUnit": 1644,
+        "scope": 1676,
+        "sourceUnit": 1684,
         "src": "33:34:6",
         "symbolAliases": [],
         "unitAlias": ""
@@ -52,10 +52,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/interfaces/DividendInterface.sol",
         "file": "../../../interfaces/DividendInterface.sol",
-        "id": 1624,
+        "id": 1664,
         "nodeType": "ImportDirective",
-        "scope": 1636,
-        "sourceUnit": 3038,
+        "scope": 1676,
+        "sourceUnit": 3078,
         "src": "68:51:6",
         "symbolAliases": [],
         "unitAlias": ""
@@ -66,22 +66,22 @@
         "contractKind": "contract",
         "documentation": "@title Library to validate AZTEC dividend proofs\n@author AZTEC\n@dev Don't include this as an internal library. This contract uses a static memory table\nto cache elliptic curve primitives and hashes.\nCalling this internally from another function will lead to memory mutation and undefined behaviour.\nThe intended use case is to call this externally via `staticcall`. External calls to OptimizedAZTEC\ncan be treated as pure functions as this contract contains no storage and makes no external calls\n(other than to precompiles).\nCopyright Spilsbury Holdings Ltd 2019. All rights reserved.*",
         "fullyImplemented": true,
-        "id": 1635,
+        "id": 1675,
         "linearizedBaseContracts": [
-          1635
+          1675
         ],
         "name": "Dividend",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 1633,
+              "id": 1673,
               "nodeType": "Block",
               "src": "1192:17886:6",
               "statements": [
                 {
                   "externalReferences": [],
-                  "id": 1627,
+                  "id": 1667,
                   "nodeType": "InlineAssembly",
                   "operations": "{\n    validateDividend()\n    mstore(0x40, 0x60)\n    function validateDividend()\n    {\n        mstore(0x80, calldataload(0x44))\n        mstore(0xa0, calldataload(0x64))\n        let notes := add(0x104, calldataload(0x184))\n        let n := calldataload(notes)\n        let gen_order := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001\n        let challenge := mod(calldataload(0x124), gen_order)\n        let za := mod(calldataload(0x144), gen_order)\n        let zb := mod(calldataload(0x164), gen_order)\n        if gt(za, 1048576)\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n        if gt(zb, 1048576)\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n        mstore(0x2a0, calldataload(0x24))\n        mstore(0x2c0, za)\n        mstore(0x2e0, zb)\n        hashCommitments(notes, n)\n        let b := add(0x300, mul(n, 0x80))\n        for {\n            let i := 0\n        }\n        lt(i, 3)\n        {\n            i := add(i, 0x01)\n        }\n        {\n            let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n            let k\n            let a := calldataload(add(noteIndex, 0x20))\n            let c := challenge\n            switch gt(i, 1)\n            case 1 {\n                k := addmod(mulmod(calldataload(sub(noteIndex, add(0xc0, 0xc0))), zb, gen_order), mulmod(sub(gen_order, calldataload(sub(noteIndex, 0xc0))), za, gen_order), gen_order)\n            }\n            case 0 {\n                k := calldataload(noteIndex)\n            }\n            validateCommitment(noteIndex, k, a)\n            let x := mod(mload(0x00), gen_order)\n            k := mulmod(k, x, gen_order)\n            a := mulmod(a, x, gen_order)\n            c := mulmod(challenge, x, gen_order)\n            mstore(0x00, keccak256(0x00, 0x20))\n            calldatacopy(0xe0, add(noteIndex, 0x80), 0x40)\n            calldatacopy(0x20, add(noteIndex, 0x40), 0x40)\n            mstore(0x120, sub(gen_order, c))\n            mstore(0x60, k)\n            mstore(0xc0, a)\n            let result := staticcall(gas(), 7, 0xe0, 0x60, 0x1a0, 0x40)\n            result := and(result, staticcall(gas(), 7, 0x20, 0x60, 0x120, 0x40))\n            result := and(result, staticcall(gas(), 7, 0x80, 0x60, 0x160, 0x40))\n            result := and(result, staticcall(gas(), 6, 0x120, 0x80, 0x160, 0x40))\n            result := and(result, staticcall(gas(), 6, 0x160, 0x80, b, 0x40))\n            if eq(i, 0)\n            {\n                mstore(0x260, mload(0x20))\n                mstore(0x280, mload(0x40))\n                mstore(0x1e0, mload(0xe0))\n                mstore(0x200, sub(0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47, mload(0x100)))\n            }\n            if gt(i, 0)\n            {\n                mstore(0x60, c)\n                result := and(result, staticcall(gas(), 7, 0x20, 0x60, 0x220, 0x40))\n                result := and(result, staticcall(gas(), 6, 0x220, 0x80, 0x260, 0x40))\n                result := and(result, staticcall(gas(), 6, 0x1a0, 0x80, 0x1e0, 0x40))\n            }\n            if iszero(result)\n            {\n                mstore(0x00, 400)\n                revert(0x00, 0x20)\n            }\n            b := add(b, 0x40)\n        }\n        validatePairing(0x84)\n        let expected := mod(keccak256(0x2a0, sub(b, 0x2a0)), gen_order)\n        if iszero(eq(expected, challenge))\n        {\n            mstore(0x00, 404)\n            revert(0x00, 0x20)\n        }\n    }\n    function validatePairing(t2)\n    {\n        let field_order := 0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47\n        let t2_x_1 := calldataload(t2)\n        let t2_x_2 := calldataload(add(t2, 0x20))\n        let t2_y_1 := calldataload(add(t2, 0x40))\n        let t2_y_2 := calldataload(add(t2, 0x60))\n        if or(or(or(or(or(or(or(iszero(t2_x_1), iszero(t2_x_2)), iszero(t2_y_1)), iszero(t2_y_2)), eq(t2_x_1, 0x1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed)), eq(t2_x_2, 0x198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c2)), eq(t2_y_1, 0x12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa)), eq(t2_y_2, 0x90689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n        mstore(0x20, mload(0x1e0))\n        mstore(0x40, mload(0x200))\n        mstore(0x80, 0x1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed)\n        mstore(0x60, 0x198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c2)\n        mstore(0xc0, 0x12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa)\n        mstore(0xa0, 0x90689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b)\n        mstore(0xe0, mload(0x260))\n        mstore(0x100, mload(0x280))\n        mstore(0x140, t2_x_1)\n        mstore(0x120, t2_x_2)\n        mstore(0x180, t2_y_1)\n        mstore(0x160, t2_y_2)\n        let success := staticcall(gas(), 8, 0x20, 0x180, 0x20, 0x20)\n        if or(iszero(success), iszero(mload(0x20)))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n    }\n    function validateCommitment(note, k, a)\n    {\n        let gen_order := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001\n        let field_order := 0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47\n        let gammaX := calldataload(add(note, 0x40))\n        let gammaY := calldataload(add(note, 0x60))\n        let sigmaX := calldataload(add(note, 0x80))\n        let sigmaY := calldataload(add(note, 0xa0))\n        if iszero(and(and(and(eq(mod(a, gen_order), a), gt(a, 1)), and(eq(mod(k, gen_order), k), gt(k, 1))), and(eq(addmod(mulmod(mulmod(sigmaX, sigmaX, field_order), sigmaX, field_order), 3, field_order), mulmod(sigmaY, sigmaY, field_order)), eq(addmod(mulmod(mulmod(gammaX, gammaX, field_order), gammaX, field_order), 3, field_order), mulmod(gammaY, gammaY, field_order)))))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n    }\n    function hashCommitments(notes, n)\n    {\n        for {\n            let i := 0\n        }\n        lt(i, n)\n        {\n            i := add(i, 0x01)\n        }\n        {\n            let index := add(add(notes, mul(i, 0xc0)), 0x60)\n            calldatacopy(add(0x300, mul(i, 0x80)), index, 0x80)\n        }\n        mstore(0x00, keccak256(0x300, mul(n, 0x80)))\n    }\n}",
                   "src": "1202:17853:6"
@@ -94,32 +94,32 @@
                       "argumentTypes": [],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 1628,
+                        "id": 1668,
                         "name": "DividendABIEncoder",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1643,
+                        "referencedDeclaration": 1683,
                         "src": "19037:18:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_DividendABIEncoder_$1643_$",
+                          "typeIdentifier": "t_type$_t_contract$_DividendABIEncoder_$1683_$",
                           "typeString": "type(library DividendABIEncoder)"
                         }
                       },
-                      "id": 1630,
+                      "id": 1670,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "encodeAndExit",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1642,
+                      "referencedDeclaration": 1682,
                       "src": "19037:32:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$__$returns$__$",
                         "typeString": "function () pure"
                       }
                     },
-                    "id": 1631,
+                    "id": 1671,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -133,39 +133,39 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1632,
+                  "id": 1672,
                   "nodeType": "ExpressionStatement",
                   "src": "19037:34:6"
                 }
               ]
             },
             "documentation": "@dev This will take any dividend calculation proof data and attempt to verify it in zero-knowledge\nIf the proof is not valid, the transaction throws.\n@notice See DividendInterface for how method calls should be constructed.\nDividend is written in YUL to enable manual memory management and for other efficiency savings.*",
-            "id": 1634,
+            "id": 1674,
             "implemented": true,
             "kind": "fallback",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1625,
+              "id": 1665,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1180:2:6"
             },
             "returnParameters": {
-              "id": 1626,
+              "id": 1666,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1192:0:6"
             },
-            "scope": 1635,
+            "scope": 1675,
             "src": "1172:17906:6",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 1636,
+        "scope": 1676,
         "src": "743:18337:6"
       }
     ],
@@ -175,14 +175,14 @@
     "absolutePath": "@aztec/protocol/contracts/ACE/validators/dividend/Dividend.sol",
     "exportedSymbols": {
       "Dividend": [
-        1635
+        1675
       ]
     },
-    "id": 1636,
+    "id": 1676,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1622,
+        "id": 1662,
         "literals": [
           "solidity",
           ">=",
@@ -198,10 +198,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/ACE/validators/dividend/DividendABIEncoder.sol",
         "file": "./DividendABIEncoder.sol",
-        "id": 1623,
+        "id": 1663,
         "nodeType": "ImportDirective",
-        "scope": 1636,
-        "sourceUnit": 1644,
+        "scope": 1676,
+        "sourceUnit": 1684,
         "src": "33:34:6",
         "symbolAliases": [],
         "unitAlias": ""
@@ -209,10 +209,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/interfaces/DividendInterface.sol",
         "file": "../../../interfaces/DividendInterface.sol",
-        "id": 1624,
+        "id": 1664,
         "nodeType": "ImportDirective",
-        "scope": 1636,
-        "sourceUnit": 3038,
+        "scope": 1676,
+        "sourceUnit": 3078,
         "src": "68:51:6",
         "symbolAliases": [],
         "unitAlias": ""
@@ -223,22 +223,22 @@
         "contractKind": "contract",
         "documentation": "@title Library to validate AZTEC dividend proofs\n@author AZTEC\n@dev Don't include this as an internal library. This contract uses a static memory table\nto cache elliptic curve primitives and hashes.\nCalling this internally from another function will lead to memory mutation and undefined behaviour.\nThe intended use case is to call this externally via `staticcall`. External calls to OptimizedAZTEC\ncan be treated as pure functions as this contract contains no storage and makes no external calls\n(other than to precompiles).\nCopyright Spilsbury Holdings Ltd 2019. All rights reserved.*",
         "fullyImplemented": true,
-        "id": 1635,
+        "id": 1675,
         "linearizedBaseContracts": [
-          1635
+          1675
         ],
         "name": "Dividend",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 1633,
+              "id": 1673,
               "nodeType": "Block",
               "src": "1192:17886:6",
               "statements": [
                 {
                   "externalReferences": [],
-                  "id": 1627,
+                  "id": 1667,
                   "nodeType": "InlineAssembly",
                   "operations": "{\n    validateDividend()\n    mstore(0x40, 0x60)\n    function validateDividend()\n    {\n        mstore(0x80, calldataload(0x44))\n        mstore(0xa0, calldataload(0x64))\n        let notes := add(0x104, calldataload(0x184))\n        let n := calldataload(notes)\n        let gen_order := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001\n        let challenge := mod(calldataload(0x124), gen_order)\n        let za := mod(calldataload(0x144), gen_order)\n        let zb := mod(calldataload(0x164), gen_order)\n        if gt(za, 1048576)\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n        if gt(zb, 1048576)\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n        mstore(0x2a0, calldataload(0x24))\n        mstore(0x2c0, za)\n        mstore(0x2e0, zb)\n        hashCommitments(notes, n)\n        let b := add(0x300, mul(n, 0x80))\n        for {\n            let i := 0\n        }\n        lt(i, 3)\n        {\n            i := add(i, 0x01)\n        }\n        {\n            let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n            let k\n            let a := calldataload(add(noteIndex, 0x20))\n            let c := challenge\n            switch gt(i, 1)\n            case 1 {\n                k := addmod(mulmod(calldataload(sub(noteIndex, add(0xc0, 0xc0))), zb, gen_order), mulmod(sub(gen_order, calldataload(sub(noteIndex, 0xc0))), za, gen_order), gen_order)\n            }\n            case 0 {\n                k := calldataload(noteIndex)\n            }\n            validateCommitment(noteIndex, k, a)\n            let x := mod(mload(0x00), gen_order)\n            k := mulmod(k, x, gen_order)\n            a := mulmod(a, x, gen_order)\n            c := mulmod(challenge, x, gen_order)\n            mstore(0x00, keccak256(0x00, 0x20))\n            calldatacopy(0xe0, add(noteIndex, 0x80), 0x40)\n            calldatacopy(0x20, add(noteIndex, 0x40), 0x40)\n            mstore(0x120, sub(gen_order, c))\n            mstore(0x60, k)\n            mstore(0xc0, a)\n            let result := staticcall(gas(), 7, 0xe0, 0x60, 0x1a0, 0x40)\n            result := and(result, staticcall(gas(), 7, 0x20, 0x60, 0x120, 0x40))\n            result := and(result, staticcall(gas(), 7, 0x80, 0x60, 0x160, 0x40))\n            result := and(result, staticcall(gas(), 6, 0x120, 0x80, 0x160, 0x40))\n            result := and(result, staticcall(gas(), 6, 0x160, 0x80, b, 0x40))\n            if eq(i, 0)\n            {\n                mstore(0x260, mload(0x20))\n                mstore(0x280, mload(0x40))\n                mstore(0x1e0, mload(0xe0))\n                mstore(0x200, sub(0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47, mload(0x100)))\n            }\n            if gt(i, 0)\n            {\n                mstore(0x60, c)\n                result := and(result, staticcall(gas(), 7, 0x20, 0x60, 0x220, 0x40))\n                result := and(result, staticcall(gas(), 6, 0x220, 0x80, 0x260, 0x40))\n                result := and(result, staticcall(gas(), 6, 0x1a0, 0x80, 0x1e0, 0x40))\n            }\n            if iszero(result)\n            {\n                mstore(0x00, 400)\n                revert(0x00, 0x20)\n            }\n            b := add(b, 0x40)\n        }\n        validatePairing(0x84)\n        let expected := mod(keccak256(0x2a0, sub(b, 0x2a0)), gen_order)\n        if iszero(eq(expected, challenge))\n        {\n            mstore(0x00, 404)\n            revert(0x00, 0x20)\n        }\n    }\n    function validatePairing(t2)\n    {\n        let field_order := 0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47\n        let t2_x_1 := calldataload(t2)\n        let t2_x_2 := calldataload(add(t2, 0x20))\n        let t2_y_1 := calldataload(add(t2, 0x40))\n        let t2_y_2 := calldataload(add(t2, 0x60))\n        if or(or(or(or(or(or(or(iszero(t2_x_1), iszero(t2_x_2)), iszero(t2_y_1)), iszero(t2_y_2)), eq(t2_x_1, 0x1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed)), eq(t2_x_2, 0x198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c2)), eq(t2_y_1, 0x12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa)), eq(t2_y_2, 0x90689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n        mstore(0x20, mload(0x1e0))\n        mstore(0x40, mload(0x200))\n        mstore(0x80, 0x1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed)\n        mstore(0x60, 0x198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c2)\n        mstore(0xc0, 0x12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa)\n        mstore(0xa0, 0x90689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b)\n        mstore(0xe0, mload(0x260))\n        mstore(0x100, mload(0x280))\n        mstore(0x140, t2_x_1)\n        mstore(0x120, t2_x_2)\n        mstore(0x180, t2_y_1)\n        mstore(0x160, t2_y_2)\n        let success := staticcall(gas(), 8, 0x20, 0x180, 0x20, 0x20)\n        if or(iszero(success), iszero(mload(0x20)))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n    }\n    function validateCommitment(note, k, a)\n    {\n        let gen_order := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001\n        let field_order := 0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47\n        let gammaX := calldataload(add(note, 0x40))\n        let gammaY := calldataload(add(note, 0x60))\n        let sigmaX := calldataload(add(note, 0x80))\n        let sigmaY := calldataload(add(note, 0xa0))\n        if iszero(and(and(and(eq(mod(a, gen_order), a), gt(a, 1)), and(eq(mod(k, gen_order), k), gt(k, 1))), and(eq(addmod(mulmod(mulmod(sigmaX, sigmaX, field_order), sigmaX, field_order), 3, field_order), mulmod(sigmaY, sigmaY, field_order)), eq(addmod(mulmod(mulmod(gammaX, gammaX, field_order), gammaX, field_order), 3, field_order), mulmod(gammaY, gammaY, field_order)))))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n    }\n    function hashCommitments(notes, n)\n    {\n        for {\n            let i := 0\n        }\n        lt(i, n)\n        {\n            i := add(i, 0x01)\n        }\n        {\n            let index := add(add(notes, mul(i, 0xc0)), 0x60)\n            calldatacopy(add(0x300, mul(i, 0x80)), index, 0x80)\n        }\n        mstore(0x00, keccak256(0x300, mul(n, 0x80)))\n    }\n}",
                   "src": "1202:17853:6"
@@ -251,32 +251,32 @@
                       "argumentTypes": [],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 1628,
+                        "id": 1668,
                         "name": "DividendABIEncoder",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1643,
+                        "referencedDeclaration": 1683,
                         "src": "19037:18:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_DividendABIEncoder_$1643_$",
+                          "typeIdentifier": "t_type$_t_contract$_DividendABIEncoder_$1683_$",
                           "typeString": "type(library DividendABIEncoder)"
                         }
                       },
-                      "id": 1630,
+                      "id": 1670,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "encodeAndExit",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1642,
+                      "referencedDeclaration": 1682,
                       "src": "19037:32:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$__$returns$__$",
                         "typeString": "function () pure"
                       }
                     },
-                    "id": 1631,
+                    "id": 1671,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -290,39 +290,39 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1632,
+                  "id": 1672,
                   "nodeType": "ExpressionStatement",
                   "src": "19037:34:6"
                 }
               ]
             },
             "documentation": "@dev This will take any dividend calculation proof data and attempt to verify it in zero-knowledge\nIf the proof is not valid, the transaction throws.\n@notice See DividendInterface for how method calls should be constructed.\nDividend is written in YUL to enable manual memory management and for other efficiency savings.*",
-            "id": 1634,
+            "id": 1674,
             "implemented": true,
             "kind": "fallback",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1625,
+              "id": 1665,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1180:2:6"
             },
             "returnParameters": {
-              "id": 1626,
+              "id": 1666,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1192:0:6"
             },
-            "scope": 1635,
+            "scope": 1675,
             "src": "1172:17906:6",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 1636,
+        "scope": 1676,
         "src": "743:18337:6"
       }
     ],
@@ -344,10 +344,16 @@
       "links": {},
       "address": "0x60ad21C246255aDeD791029EF792969b279f0583",
       "transactionHash": "0xa58b0bd4d8b6c0070d58fad25bd2c78f0485ec00a827690263f6116d52a14086"
+    },
+    "1567943518950": {
+      "events": {},
+      "links": {},
+      "address": "0x8717F9BD922D081076905C4c8910C6C9EB42eB64",
+      "transactionHash": "0xf1ec4a9773ddb444d6892e22f7bf26ef8f73b2e17a0cfb3b53361d5a63ca700b"
     }
   },
   "schemaVersion": "3.0.15",
-  "updatedAt": "2019-09-08T01:44:16.025Z",
+  "updatedAt": "2019-09-08T13:28:09.352Z",
   "devdoc": {
     "author": "AZTEC",
     "details": "Don't include this as an internal library. This contract uses a static memory table to cache elliptic curve primitives and hashes. Calling this internally from another function will lead to memory mutation and undefined behaviour. The intended use case is to call this externally via `staticcall`. External calls to OptimizedAZTEC can be treated as pure functions as this contract contains no storage and makes no external calls (other than to precompiles). Copyright Spilsbury Holdings Ltd 2019. All rights reserved.*",

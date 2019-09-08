@@ -12,14 +12,14 @@
     "absolutePath": "@aztec/protocol/contracts/ACE/validators/swap/SwapABIEncoder.sol",
     "exportedSymbols": {
       "SwapABIEncoder": [
-        1760
+        1800
       ]
     },
-    "id": 1761,
+    "id": 1801,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1754,
+        "id": 1794,
         "literals": [
           "solidity",
           ">=",
@@ -38,22 +38,22 @@
         "contractKind": "library",
         "documentation": "@title Library to ABI encode the output of a Swap proof verification\n@author AZTEC\n@dev Don't include this as an internal library. This contract uses a static memory table to cache\nelliptic curve primitives and hashes.\nCalling this internally from another function will lead to memory mutation and undefined behaviour.\nThe intended use case is to call this externally via `staticcall`.\nExternal calls to OptimizedAZTEC can be treated as pure functions as this contract contains no\nstorage and makes no external calls (other than to precompiles)\nCopyright Spilsbury Holdings Ltd 2019. All rights reserved.*",
         "fullyImplemented": true,
-        "id": 1760,
+        "id": 1800,
         "linearizedBaseContracts": [
-          1760
+          1800
         ],
         "name": "SwapABIEncoder",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 1758,
+              "id": 1798,
               "nodeType": "Block",
               "src": "1464:25983:17",
               "statements": [
                 {
                   "externalReferences": [],
-                  "id": 1757,
+                  "id": 1797,
                   "nodeType": "InlineAssembly",
                   "operations": "{\n    let notes := add(0x104, calldataload(0x144))\n    let noteOwners := add(0x124, calldataload(0x164))\n    let metadataPtr := add(0x144, calldataload(0x184))\n    if iszero(and(eq(0x02, calldataload(sub(metadataPtr, 0x20))), eq(0x04, calldataload(sub(noteOwners, 0x20)))))\n    {\n        revert(0x00, 0x00)\n    }\n    mstore(0x160, 0x20)\n    mstore(0x1a0, 0x02)\n    mstore(0x1c0, 0x80)\n    mstore(0x220, 0xc0)\n    mstore(0x240, 0x200)\n    mstore(0x260, 0x00)\n    mstore(0x280, 0x00)\n    mstore(0x2a0, calldataload(0x124))\n    mstore(0x2c0, 0x120)\n    mstore(0x2e0, 0x01)\n    mstore(0x300, 0x60)\n    mstore(0x00, 0x01)\n    calldatacopy(0x20, add(notes, 0x60), 0x80)\n    mstore(0x320, 0xc0)\n    mstore(0x340, 0x01)\n    mstore(0x360, calldataload(noteOwners))\n    mstore(0x380, keccak256(0x00, 0xa0))\n    mstore(0x3a0, 0x40)\n    mstore(0x3c0, or(mload(0x20), mul(and(mload(0x40), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n    mstore(0x3e0, or(mload(0x60), mul(and(mload(0x80), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n    mstore(0x420, 0x01)\n    mstore(0x440, 0x60)\n    calldatacopy(0x20, add(notes, 0x1e0), 0x80)\n    mstore(0x480, 0x01)\n    mstore(0x4a0, calldataload(add(noteOwners, 0x40)))\n    mstore(0x4c0, keccak256(0x00, 0xa0))\n    let metadataIndex := calldataload(metadataPtr)\n    let metadataLength := calldataload(add(sub(metadataPtr, 0x40), metadataIndex))\n    mstore(0x4e0, add(0x40, metadataLength))\n    mstore(0x500, or(mload(0x20), mul(and(mload(0x40), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n    mstore(0x520, or(mload(0x60), mul(and(mload(0x80), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n    calldatacopy(0x540, add(metadataIndex, sub(metadataPtr, 0x20)), metadataLength)\n    mstore(0x460, add(0xc0, metadataLength))\n    mstore(0x400, add(0x120, metadataLength))\n    mstore(0x200, add(0x320, metadataLength))\n    mstore(0x1e0, add(0x3c0, metadataLength))\n    let proofPtr := add(0x540, metadataLength)\n    mstore(add(proofPtr, 0x20), 0xc0)\n    mstore(add(proofPtr, 0x40), 0x200)\n    mstore(add(proofPtr, 0x60), 0x00)\n    mstore(add(proofPtr, 0x80), 0x00)\n    mstore(0xe0, calldataload(0x124))\n    mstore(add(proofPtr, 0xa0), keccak256(0xe0, 0x20))\n    mstore(add(proofPtr, 0xc0), 0x120)\n    mstore(add(proofPtr, 0xe0), 0x01)\n    mstore(add(proofPtr, 0x100), 0x60)\n    calldatacopy(0x20, add(notes, 0x2a0), 0x80)\n    mstore(add(proofPtr, 0x120), 0xc0)\n    mstore(add(proofPtr, 0x140), 0x01)\n    mstore(add(proofPtr, 0x160), calldataload(add(noteOwners, 0x60)))\n    mstore(add(proofPtr, 0x180), keccak256(0x00, 0xa0))\n    mstore(add(proofPtr, 0x1a0), 0x40)\n    mstore(add(proofPtr, 0x1c0), or(mload(0x20), mul(and(mload(0x40), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n    mstore(add(proofPtr, 0x1e0), or(mload(0x60), mul(and(mload(0x80), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n    mstore(add(proofPtr, 0x220), 0x01)\n    mstore(add(proofPtr, 0x240), 0x60)\n    calldatacopy(0x20, add(notes, 0x120), 0x80)\n    mstore(add(proofPtr, 0x280), 0x01)\n    mstore(add(proofPtr, 0x2a0), calldataload(add(noteOwners, 0x20)))\n    mstore(add(proofPtr, 0x2c0), keccak256(0x00, 0xa0))\n    metadataIndex := calldataload(add(metadataPtr, 0x20))\n    metadataLength := calldataload(add(sub(metadataPtr, 0x40), metadataIndex))\n    mstore(add(proofPtr, 0x2e0), add(0x40, metadataLength))\n    mstore(add(proofPtr, 0x300), or(mload(0x20), mul(and(mload(0x40), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n    mstore(add(proofPtr, 0x320), or(mload(0x60), mul(and(mload(0x80), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n    calldatacopy(add(proofPtr, 0x340), add(metadataIndex, sub(metadataPtr, 0x20)), metadataLength)\n    mstore(add(proofPtr, 0x260), add(0xc0, metadataLength))\n    mstore(add(proofPtr, 0x200), add(0x120, metadataLength))\n    mstore(proofPtr, add(0x320, metadataLength))\n    mstore(0x180, add(add(0x3c0, metadataLength), mload(0x200)))\n    return(0x160, add(mload(0x180), 0x40))\n}",
                   "src": "1474:25973:17"
@@ -61,32 +61,32 @@
               ]
             },
             "documentation": "Calldata map\n0x04:0x24      = calldata location of proofData byte array - pointer to the proofData.\n0x24:0x44      = message sender // sender\n0x44:0x64      = h_x     // crs\n0x64:0x84      = h_y     // crs\n0x84:0xa4      = t2_x0   // crs\n0xa4:0xc4      = t2_x1   // crs\n0xc4:0xe4      = t2_y0   // crs\n0xe4:0x104     = t2_y1   // crs\n0x104:0x124    = length of proofData byte array\n0x124:0x144    = challenge\n0x144:0x164    = offset in byte array to notes\n0x164:0x184    = offset in byte array to inputOwners\n0x184:0x1a4    = offset in byte array to outputOwners\n0x1a4:0x1c4    = offset in byte array to metadata*",
-            "id": 1759,
+            "id": 1799,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "encodeAndExit",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1755,
+              "id": 1795,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1447:2:17"
             },
             "returnParameters": {
-              "id": 1756,
+              "id": 1796,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1464:0:17"
             },
-            "scope": 1760,
+            "scope": 1800,
             "src": "1425:26022:17",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "internal"
           }
         ],
-        "scope": 1761,
+        "scope": 1801,
         "src": "675:26774:17"
       }
     ],
@@ -96,14 +96,14 @@
     "absolutePath": "@aztec/protocol/contracts/ACE/validators/swap/SwapABIEncoder.sol",
     "exportedSymbols": {
       "SwapABIEncoder": [
-        1760
+        1800
       ]
     },
-    "id": 1761,
+    "id": 1801,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1754,
+        "id": 1794,
         "literals": [
           "solidity",
           ">=",
@@ -122,22 +122,22 @@
         "contractKind": "library",
         "documentation": "@title Library to ABI encode the output of a Swap proof verification\n@author AZTEC\n@dev Don't include this as an internal library. This contract uses a static memory table to cache\nelliptic curve primitives and hashes.\nCalling this internally from another function will lead to memory mutation and undefined behaviour.\nThe intended use case is to call this externally via `staticcall`.\nExternal calls to OptimizedAZTEC can be treated as pure functions as this contract contains no\nstorage and makes no external calls (other than to precompiles)\nCopyright Spilsbury Holdings Ltd 2019. All rights reserved.*",
         "fullyImplemented": true,
-        "id": 1760,
+        "id": 1800,
         "linearizedBaseContracts": [
-          1760
+          1800
         ],
         "name": "SwapABIEncoder",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 1758,
+              "id": 1798,
               "nodeType": "Block",
               "src": "1464:25983:17",
               "statements": [
                 {
                   "externalReferences": [],
-                  "id": 1757,
+                  "id": 1797,
                   "nodeType": "InlineAssembly",
                   "operations": "{\n    let notes := add(0x104, calldataload(0x144))\n    let noteOwners := add(0x124, calldataload(0x164))\n    let metadataPtr := add(0x144, calldataload(0x184))\n    if iszero(and(eq(0x02, calldataload(sub(metadataPtr, 0x20))), eq(0x04, calldataload(sub(noteOwners, 0x20)))))\n    {\n        revert(0x00, 0x00)\n    }\n    mstore(0x160, 0x20)\n    mstore(0x1a0, 0x02)\n    mstore(0x1c0, 0x80)\n    mstore(0x220, 0xc0)\n    mstore(0x240, 0x200)\n    mstore(0x260, 0x00)\n    mstore(0x280, 0x00)\n    mstore(0x2a0, calldataload(0x124))\n    mstore(0x2c0, 0x120)\n    mstore(0x2e0, 0x01)\n    mstore(0x300, 0x60)\n    mstore(0x00, 0x01)\n    calldatacopy(0x20, add(notes, 0x60), 0x80)\n    mstore(0x320, 0xc0)\n    mstore(0x340, 0x01)\n    mstore(0x360, calldataload(noteOwners))\n    mstore(0x380, keccak256(0x00, 0xa0))\n    mstore(0x3a0, 0x40)\n    mstore(0x3c0, or(mload(0x20), mul(and(mload(0x40), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n    mstore(0x3e0, or(mload(0x60), mul(and(mload(0x80), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n    mstore(0x420, 0x01)\n    mstore(0x440, 0x60)\n    calldatacopy(0x20, add(notes, 0x1e0), 0x80)\n    mstore(0x480, 0x01)\n    mstore(0x4a0, calldataload(add(noteOwners, 0x40)))\n    mstore(0x4c0, keccak256(0x00, 0xa0))\n    let metadataIndex := calldataload(metadataPtr)\n    let metadataLength := calldataload(add(sub(metadataPtr, 0x40), metadataIndex))\n    mstore(0x4e0, add(0x40, metadataLength))\n    mstore(0x500, or(mload(0x20), mul(and(mload(0x40), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n    mstore(0x520, or(mload(0x60), mul(and(mload(0x80), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n    calldatacopy(0x540, add(metadataIndex, sub(metadataPtr, 0x20)), metadataLength)\n    mstore(0x460, add(0xc0, metadataLength))\n    mstore(0x400, add(0x120, metadataLength))\n    mstore(0x200, add(0x320, metadataLength))\n    mstore(0x1e0, add(0x3c0, metadataLength))\n    let proofPtr := add(0x540, metadataLength)\n    mstore(add(proofPtr, 0x20), 0xc0)\n    mstore(add(proofPtr, 0x40), 0x200)\n    mstore(add(proofPtr, 0x60), 0x00)\n    mstore(add(proofPtr, 0x80), 0x00)\n    mstore(0xe0, calldataload(0x124))\n    mstore(add(proofPtr, 0xa0), keccak256(0xe0, 0x20))\n    mstore(add(proofPtr, 0xc0), 0x120)\n    mstore(add(proofPtr, 0xe0), 0x01)\n    mstore(add(proofPtr, 0x100), 0x60)\n    calldatacopy(0x20, add(notes, 0x2a0), 0x80)\n    mstore(add(proofPtr, 0x120), 0xc0)\n    mstore(add(proofPtr, 0x140), 0x01)\n    mstore(add(proofPtr, 0x160), calldataload(add(noteOwners, 0x60)))\n    mstore(add(proofPtr, 0x180), keccak256(0x00, 0xa0))\n    mstore(add(proofPtr, 0x1a0), 0x40)\n    mstore(add(proofPtr, 0x1c0), or(mload(0x20), mul(and(mload(0x40), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n    mstore(add(proofPtr, 0x1e0), or(mload(0x60), mul(and(mload(0x80), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n    mstore(add(proofPtr, 0x220), 0x01)\n    mstore(add(proofPtr, 0x240), 0x60)\n    calldatacopy(0x20, add(notes, 0x120), 0x80)\n    mstore(add(proofPtr, 0x280), 0x01)\n    mstore(add(proofPtr, 0x2a0), calldataload(add(noteOwners, 0x20)))\n    mstore(add(proofPtr, 0x2c0), keccak256(0x00, 0xa0))\n    metadataIndex := calldataload(add(metadataPtr, 0x20))\n    metadataLength := calldataload(add(sub(metadataPtr, 0x40), metadataIndex))\n    mstore(add(proofPtr, 0x2e0), add(0x40, metadataLength))\n    mstore(add(proofPtr, 0x300), or(mload(0x20), mul(and(mload(0x40), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n    mstore(add(proofPtr, 0x320), or(mload(0x60), mul(and(mload(0x80), 0x01), 0x8000000000000000000000000000000000000000000000000000000000000000)))\n    calldatacopy(add(proofPtr, 0x340), add(metadataIndex, sub(metadataPtr, 0x20)), metadataLength)\n    mstore(add(proofPtr, 0x260), add(0xc0, metadataLength))\n    mstore(add(proofPtr, 0x200), add(0x120, metadataLength))\n    mstore(proofPtr, add(0x320, metadataLength))\n    mstore(0x180, add(add(0x3c0, metadataLength), mload(0x200)))\n    return(0x160, add(mload(0x180), 0x40))\n}",
                   "src": "1474:25973:17"
@@ -145,32 +145,32 @@
               ]
             },
             "documentation": "Calldata map\n0x04:0x24      = calldata location of proofData byte array - pointer to the proofData.\n0x24:0x44      = message sender // sender\n0x44:0x64      = h_x     // crs\n0x64:0x84      = h_y     // crs\n0x84:0xa4      = t2_x0   // crs\n0xa4:0xc4      = t2_x1   // crs\n0xc4:0xe4      = t2_y0   // crs\n0xe4:0x104     = t2_y1   // crs\n0x104:0x124    = length of proofData byte array\n0x124:0x144    = challenge\n0x144:0x164    = offset in byte array to notes\n0x164:0x184    = offset in byte array to inputOwners\n0x184:0x1a4    = offset in byte array to outputOwners\n0x1a4:0x1c4    = offset in byte array to metadata*",
-            "id": 1759,
+            "id": 1799,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "encodeAndExit",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1755,
+              "id": 1795,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1447:2:17"
             },
             "returnParameters": {
-              "id": 1756,
+              "id": 1796,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1464:0:17"
             },
-            "scope": 1760,
+            "scope": 1800,
             "src": "1425:26022:17",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "internal"
           }
         ],
-        "scope": 1761,
+        "scope": 1801,
         "src": "675:26774:17"
       }
     ],
@@ -182,7 +182,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.15",
-  "updatedAt": "2019-09-08T01:44:05.965Z",
+  "updatedAt": "2019-09-08T13:27:56.067Z",
   "devdoc": {
     "author": "AZTEC",
     "details": "Don't include this as an internal library. This contract uses a static memory table to cache elliptic curve primitives and hashes. Calling this internally from another function will lead to memory mutation and undefined behaviour. The intended use case is to call this externally via `staticcall`. External calls to OptimizedAZTEC can be treated as pure functions as this contract contains no storage and makes no external calls (other than to precompiles) Copyright Spilsbury Holdings Ltd 2019. All rights reserved.*",

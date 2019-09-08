@@ -60,14 +60,14 @@
     "absolutePath": "@aztec/protocol/contracts/interfaces/JoinSplitFluidInterface.sol",
     "exportedSymbols": {
       "JoinSplitFluidInterface": [
-        3175
+        3215
       ]
     },
-    "id": 3176,
+    "id": 3216,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3153,
+        "id": 3193,
         "literals": [
           "solidity",
           ">=",
@@ -83,10 +83,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/libs/LibEIP712.sol",
         "file": "../libs/LibEIP712.sol",
-        "id": 3154,
+        "id": 3194,
         "nodeType": "ImportDirective",
-        "scope": 3176,
-        "sourceUnit": 3327,
+        "scope": 3216,
+        "sourceUnit": 3367,
         "src": "33:31:27",
         "symbolAliases": [],
         "unitAlias": ""
@@ -97,62 +97,62 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 3155,
+              "id": 3195,
               "name": "LibEIP712",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3326,
+              "referencedDeclaration": 3366,
               "src": "102:9:27",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_LibEIP712_$3326",
+                "typeIdentifier": "t_contract$_LibEIP712_$3366",
                 "typeString": "contract LibEIP712"
               }
             },
-            "id": 3156,
+            "id": 3196,
             "nodeType": "InheritanceSpecifier",
             "src": "102:9:27"
           }
         ],
         "contractDependencies": [
-          3326
+          3366
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 3175,
+        "id": 3215,
         "linearizedBaseContracts": [
-          3175,
-          3326
+          3215,
+          3366
         ],
         "name": "JoinSplitFluidInterface",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 3159,
+              "id": 3199,
               "nodeType": "Block",
               "src": "195:2:27",
               "statements": []
             },
             "documentation": null,
-            "id": 3160,
+            "id": 3200,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3157,
+              "id": 3197,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "185:2:27"
             },
             "returnParameters": {
-              "id": 3158,
+              "id": 3198,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "195:0:27"
             },
-            "scope": 3175,
+            "scope": 3215,
             "src": "174:23:27",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -160,28 +160,28 @@
           },
           {
             "body": {
-              "id": 3173,
+              "id": 3213,
               "nodeType": "Block",
               "src": "477:2:27",
               "statements": []
             },
             "documentation": null,
-            "id": 3174,
+            "id": 3214,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "validateJoinSplitFluid",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3169,
+              "id": 3209,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3162,
+                  "id": 3202,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3174,
+                  "scope": 3214,
                   "src": "244:14:27",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -190,7 +190,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 3161,
+                    "id": 3201,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "244:5:27",
@@ -204,10 +204,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 3164,
+                  "id": 3204,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3174,
+                  "scope": 3214,
                   "src": "282:7:27",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -216,7 +216,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3163,
+                    "id": 3203,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "282:7:27",
@@ -231,10 +231,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 3168,
+                  "id": 3208,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3174,
+                  "scope": 3214,
                   "src": "317:16:27",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -244,7 +244,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 3165,
+                      "id": 3205,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
                       "src": "317:4:27",
@@ -253,11 +253,11 @@
                         "typeString": "uint256"
                       }
                     },
-                    "id": 3167,
+                    "id": 3207,
                     "length": {
                       "argumentTypes": null,
                       "hexValue": "36",
-                      "id": 3166,
+                      "id": 3206,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -286,15 +286,15 @@
               "src": "234:132:27"
             },
             "returnParameters": {
-              "id": 3172,
+              "id": 3212,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3171,
+                  "id": 3211,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3174,
+                  "scope": 3214,
                   "src": "414:12:27",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -303,7 +303,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 3170,
+                    "id": 3210,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "414:5:27",
@@ -318,14 +318,14 @@
               ],
               "src": "413:14:27"
             },
-            "scope": 3175,
+            "scope": 3215,
             "src": "203:276:27",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 3176,
+        "scope": 3216,
         "src": "66:415:27"
       }
     ],
@@ -335,14 +335,14 @@
     "absolutePath": "@aztec/protocol/contracts/interfaces/JoinSplitFluidInterface.sol",
     "exportedSymbols": {
       "JoinSplitFluidInterface": [
-        3175
+        3215
       ]
     },
-    "id": 3176,
+    "id": 3216,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3153,
+        "id": 3193,
         "literals": [
           "solidity",
           ">=",
@@ -358,10 +358,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/libs/LibEIP712.sol",
         "file": "../libs/LibEIP712.sol",
-        "id": 3154,
+        "id": 3194,
         "nodeType": "ImportDirective",
-        "scope": 3176,
-        "sourceUnit": 3327,
+        "scope": 3216,
+        "sourceUnit": 3367,
         "src": "33:31:27",
         "symbolAliases": [],
         "unitAlias": ""
@@ -372,62 +372,62 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 3155,
+              "id": 3195,
               "name": "LibEIP712",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3326,
+              "referencedDeclaration": 3366,
               "src": "102:9:27",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_LibEIP712_$3326",
+                "typeIdentifier": "t_contract$_LibEIP712_$3366",
                 "typeString": "contract LibEIP712"
               }
             },
-            "id": 3156,
+            "id": 3196,
             "nodeType": "InheritanceSpecifier",
             "src": "102:9:27"
           }
         ],
         "contractDependencies": [
-          3326
+          3366
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 3175,
+        "id": 3215,
         "linearizedBaseContracts": [
-          3175,
-          3326
+          3215,
+          3366
         ],
         "name": "JoinSplitFluidInterface",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 3159,
+              "id": 3199,
               "nodeType": "Block",
               "src": "195:2:27",
               "statements": []
             },
             "documentation": null,
-            "id": 3160,
+            "id": 3200,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3157,
+              "id": 3197,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "185:2:27"
             },
             "returnParameters": {
-              "id": 3158,
+              "id": 3198,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "195:0:27"
             },
-            "scope": 3175,
+            "scope": 3215,
             "src": "174:23:27",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -435,28 +435,28 @@
           },
           {
             "body": {
-              "id": 3173,
+              "id": 3213,
               "nodeType": "Block",
               "src": "477:2:27",
               "statements": []
             },
             "documentation": null,
-            "id": 3174,
+            "id": 3214,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "validateJoinSplitFluid",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3169,
+              "id": 3209,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3162,
+                  "id": 3202,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3174,
+                  "scope": 3214,
                   "src": "244:14:27",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -465,7 +465,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 3161,
+                    "id": 3201,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "244:5:27",
@@ -479,10 +479,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 3164,
+                  "id": 3204,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3174,
+                  "scope": 3214,
                   "src": "282:7:27",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -491,7 +491,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3163,
+                    "id": 3203,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "282:7:27",
@@ -506,10 +506,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 3168,
+                  "id": 3208,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3174,
+                  "scope": 3214,
                   "src": "317:16:27",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -519,7 +519,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 3165,
+                      "id": 3205,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
                       "src": "317:4:27",
@@ -528,11 +528,11 @@
                         "typeString": "uint256"
                       }
                     },
-                    "id": 3167,
+                    "id": 3207,
                     "length": {
                       "argumentTypes": null,
                       "hexValue": "36",
-                      "id": 3166,
+                      "id": 3206,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -561,15 +561,15 @@
               "src": "234:132:27"
             },
             "returnParameters": {
-              "id": 3172,
+              "id": 3212,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3171,
+                  "id": 3211,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3174,
+                  "scope": 3214,
                   "src": "414:12:27",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -578,7 +578,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 3170,
+                    "id": 3210,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "414:5:27",
@@ -593,14 +593,14 @@
               ],
               "src": "413:14:27"
             },
-            "scope": 3175,
+            "scope": 3215,
             "src": "203:276:27",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 3176,
+        "scope": 3216,
         "src": "66:415:27"
       }
     ],
@@ -612,7 +612,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.15",
-  "updatedAt": "2019-09-08T01:44:05.999Z",
+  "updatedAt": "2019-09-08T13:27:56.122Z",
   "devdoc": {
     "methods": {}
   },

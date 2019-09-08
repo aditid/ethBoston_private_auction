@@ -17,19 +17,25 @@ contract Bidding
         uint bidAmount;
     }
 
+    // Bids will have a user and an amount
+    struct BidNote {
+        string user;
+        uint bidAmount;
+    }
     // Keeps track of the top bid
     Bid public TopBid;
-
+    BidNote public TopBidNote;
 
     // UI will connect here to submit bid price
-    function submitBid(uint _bidPrice) public {
+    function setTopBid(address user, uint bidAmount) public {
+        TopBid.user = user;
+        TopBid.bidAmount = bidAmount;
+    }
 
-        //Non-private checking of new bid
-        require(_bidPrice > TopBid.bidAmount);
-
-        //If new bid is higher, save old and replace
-        //address old_user =  TopBid.user;
-        TopBid = Bid(msg.sender, _bidPrice);
+    // UI will connect here to submit bid price
+    function setTopBidNote(string memory user, uint bidAmount) public {
+        TopBidNote.user = user;
+        TopBidNote.bidAmount = bidAmount;
     }
 
     // UI will connect here to submit bid price
@@ -44,5 +50,11 @@ contract Bidding
     function getTopBid() public view returns (address, uint) {
 
         return (TopBid.user, TopBid.bidAmount);
+    }
+
+    //Function to return top bid
+    function getTopBidNote() public view returns (string memory, uint) {
+
+        return (TopBidNote.user, TopBidNote.bidAmount);
     }
 }

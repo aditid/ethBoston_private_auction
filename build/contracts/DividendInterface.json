@@ -40,14 +40,14 @@
     "absolutePath": "@aztec/protocol/contracts/interfaces/DividendInterface.sol",
     "exportedSymbols": {
       "DividendInterface": [
-        3037
+        3077
       ]
     },
-    "id": 3038,
+    "id": 3078,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3022,
+        "id": 3062,
         "literals": [
           "solidity",
           ">=",
@@ -66,37 +66,37 @@
         "contractKind": "library",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 3037,
+        "id": 3077,
         "linearizedBaseContracts": [
-          3037
+          3077
         ],
         "name": "DividendInterface",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 3035,
+              "id": 3075,
               "nodeType": "Block",
               "src": "229:2:24",
               "statements": []
             },
             "documentation": null,
-            "id": 3036,
+            "id": 3076,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "validateDividend",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3031,
+              "id": 3071,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3024,
+                  "id": 3064,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3036,
+                  "scope": 3076,
                   "src": "100:14:24",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -105,7 +105,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 3023,
+                    "id": 3063,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "100:5:24",
@@ -119,10 +119,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 3026,
+                  "id": 3066,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3036,
+                  "scope": 3076,
                   "src": "124:7:24",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -131,7 +131,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3025,
+                    "id": 3065,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "124:7:24",
@@ -146,10 +146,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 3030,
+                  "id": 3070,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3036,
+                  "scope": 3076,
                   "src": "141:16:24",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -159,7 +159,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 3027,
+                      "id": 3067,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
                       "src": "141:4:24",
@@ -168,11 +168,11 @@
                         "typeString": "uint256"
                       }
                     },
-                    "id": 3029,
+                    "id": 3069,
                     "length": {
                       "argumentTypes": null,
                       "hexValue": "36",
-                      "id": 3028,
+                      "id": 3068,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -201,15 +201,15 @@
               "src": "90:73:24"
             },
             "returnParameters": {
-              "id": 3034,
+              "id": 3074,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3033,
+                  "id": 3073,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3036,
+                  "scope": 3076,
                   "src": "211:12:24",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -218,7 +218,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 3032,
+                    "id": 3072,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "211:5:24",
@@ -233,14 +233,14 @@
               ],
               "src": "210:14:24"
             },
-            "scope": 3037,
+            "scope": 3077,
             "src": "65:166:24",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 3038,
+        "scope": 3078,
         "src": "33:200:24"
       }
     ],
@@ -250,14 +250,14 @@
     "absolutePath": "@aztec/protocol/contracts/interfaces/DividendInterface.sol",
     "exportedSymbols": {
       "DividendInterface": [
-        3037
+        3077
       ]
     },
-    "id": 3038,
+    "id": 3078,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3022,
+        "id": 3062,
         "literals": [
           "solidity",
           ">=",
@@ -276,37 +276,37 @@
         "contractKind": "library",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 3037,
+        "id": 3077,
         "linearizedBaseContracts": [
-          3037
+          3077
         ],
         "name": "DividendInterface",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 3035,
+              "id": 3075,
               "nodeType": "Block",
               "src": "229:2:24",
               "statements": []
             },
             "documentation": null,
-            "id": 3036,
+            "id": 3076,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "validateDividend",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3031,
+              "id": 3071,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3024,
+                  "id": 3064,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3036,
+                  "scope": 3076,
                   "src": "100:14:24",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -315,7 +315,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 3023,
+                    "id": 3063,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "100:5:24",
@@ -329,10 +329,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 3026,
+                  "id": 3066,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3036,
+                  "scope": 3076,
                   "src": "124:7:24",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -341,7 +341,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3025,
+                    "id": 3065,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "124:7:24",
@@ -356,10 +356,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 3030,
+                  "id": 3070,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3036,
+                  "scope": 3076,
                   "src": "141:16:24",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -369,7 +369,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 3027,
+                      "id": 3067,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
                       "src": "141:4:24",
@@ -378,11 +378,11 @@
                         "typeString": "uint256"
                       }
                     },
-                    "id": 3029,
+                    "id": 3069,
                     "length": {
                       "argumentTypes": null,
                       "hexValue": "36",
-                      "id": 3028,
+                      "id": 3068,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -411,15 +411,15 @@
               "src": "90:73:24"
             },
             "returnParameters": {
-              "id": 3034,
+              "id": 3074,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3033,
+                  "id": 3073,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3036,
+                  "scope": 3076,
                   "src": "211:12:24",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -428,7 +428,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 3032,
+                    "id": 3072,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "211:5:24",
@@ -443,14 +443,14 @@
               ],
               "src": "210:14:24"
             },
-            "scope": 3037,
+            "scope": 3077,
             "src": "65:166:24",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 3038,
+        "scope": 3078,
         "src": "33:200:24"
       }
     ],
@@ -462,7 +462,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.15",
-  "updatedAt": "2019-09-08T01:44:05.995Z",
+  "updatedAt": "2019-09-08T13:27:56.117Z",
   "devdoc": {
     "methods": {}
   },

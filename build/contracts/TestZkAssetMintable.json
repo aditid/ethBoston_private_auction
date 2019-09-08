@@ -573,20 +573,20 @@
     "absolutePath": "/Users/e653788/aztec-ganache-starter-kit/contracts/TestERC20.sol",
     "exportedSymbols": {
       "TestERC20": [
-        176
+        216
       ],
       "TestZkAsset": [
-        182
+        222
       ],
       "TestZkAssetMintable": [
-        179
+        219
       ]
     },
-    "id": 183,
+    "id": 223,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 157,
+        "id": 197,
         "literals": [
           "solidity",
           ">=",
@@ -602,10 +602,10 @@
       {
         "absolutePath": "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol",
         "file": "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol",
-        "id": 158,
+        "id": 198,
         "nodeType": "ImportDirective",
-        "scope": 183,
-        "sourceUnit": 4160,
+        "scope": 223,
+        "sourceUnit": 4200,
         "src": "35:63:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -613,10 +613,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/ERC1724/ZkAssetMintable.sol",
         "file": "@aztec/protocol/contracts/ERC1724/ZkAssetMintable.sol",
-        "id": 159,
+        "id": 199,
         "nodeType": "ImportDirective",
-        "scope": 183,
-        "sourceUnit": 1814,
+        "scope": 223,
+        "sourceUnit": 1854,
         "src": "99:63:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -624,10 +624,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/ERC1724/ZkAsset.sol",
         "file": "@aztec/protocol/contracts/ERC1724/ZkAsset.sol",
-        "id": 160,
+        "id": 200,
         "nodeType": "ImportDirective",
-        "scope": 183,
-        "sourceUnit": 1787,
+        "scope": 223,
+        "sourceUnit": 1827,
         "src": "163:55:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -638,40 +638,40 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 161,
+              "id": 201,
               "name": "ERC20",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 4159,
+              "referencedDeclaration": 4199,
               "src": "243:5:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20_$4159",
+                "typeIdentifier": "t_contract$_ERC20_$4199",
                 "typeString": "contract ERC20"
               }
             },
-            "id": 162,
+            "id": 202,
             "nodeType": "InheritanceSpecifier",
             "src": "243:5:3"
           }
         ],
         "contractDependencies": [
-          4159,
-          4228
+          4199,
+          4268
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 176,
+        "id": 216,
         "linearizedBaseContracts": [
-          176,
-          4159,
-          4228
+          216,
+          4199,
+          4268
         ],
         "name": "TestERC20",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 174,
+              "id": 214,
               "nodeType": "Block",
               "src": "316:34:3",
               "statements": [
@@ -681,11 +681,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 170,
+                        "id": 210,
                         "name": "_account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 164,
+                        "referencedDeclaration": 204,
                         "src": "328:8:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -694,11 +694,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 171,
+                        "id": 211,
                         "name": "_value",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 166,
+                        "referencedDeclaration": 206,
                         "src": "338:6:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -717,18 +717,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 169,
+                      "id": 209,
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4045,
+                      "referencedDeclaration": 4085,
                       "src": "322:5:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256)"
                       }
                     },
-                    "id": 172,
+                    "id": 212,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -742,29 +742,29 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 173,
+                  "id": 213,
                   "nodeType": "ExpressionStatement",
                   "src": "322:23:3"
                 }
               ]
             },
             "documentation": null,
-            "id": 175,
+            "id": 215,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "giveMeTokens",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 167,
+              "id": 207,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 164,
+                  "id": 204,
                   "name": "_account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 175,
+                  "scope": 215,
                   "src": "275:16:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -773,7 +773,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 163,
+                    "id": 203,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "275:7:3",
@@ -788,10 +788,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 166,
+                  "id": 206,
                   "name": "_value",
                   "nodeType": "VariableDeclaration",
-                  "scope": 175,
+                  "scope": 215,
                   "src": "293:14:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -800,7 +800,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 165,
+                    "id": 205,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "293:7:3",
@@ -816,19 +816,19 @@
               "src": "274:34:3"
             },
             "returnParameters": {
-              "id": 168,
+              "id": 208,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "316:0:3"
             },
-            "scope": 176,
+            "scope": 216,
             "src": "253:97:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 183,
+        "scope": 223,
         "src": "221:131:3"
       },
       {
@@ -837,50 +837,50 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 177,
+              "id": 217,
               "name": "ZkAssetMintable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1813,
+              "referencedDeclaration": 1853,
               "src": "386:15:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ZkAssetMintable_$1813",
+                "typeIdentifier": "t_contract$_ZkAssetMintable_$1853",
                 "typeString": "contract ZkAssetMintable"
               }
             },
-            "id": 178,
+            "id": 218,
             "nodeType": "InheritanceSpecifier",
             "src": "386:15:3"
           }
         ],
         "contractDependencies": [
-          1813,
-          2499,
-          2866,
-          2997,
-          3071,
-          3151,
-          3326,
-          3762
+          1853,
+          2539,
+          2906,
+          3037,
+          3111,
+          3191,
+          3366,
+          3802
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 179,
+        "id": 219,
         "linearizedBaseContracts": [
-          179,
-          1813,
-          2866,
-          2997,
-          3762,
-          2499,
-          3326,
-          3071,
-          3151
+          219,
+          1853,
+          2906,
+          3037,
+          3802,
+          2539,
+          3366,
+          3111,
+          3191
         ],
         "name": "TestZkAssetMintable",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 183,
+        "scope": 223,
         "src": "354:52:3"
       },
       {
@@ -889,44 +889,44 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 180,
+              "id": 220,
               "name": "ZkAsset",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1786,
+              "referencedDeclaration": 1826,
               "src": "432:7:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ZkAsset_$1786",
+                "typeIdentifier": "t_contract$_ZkAsset_$1826",
                 "typeString": "contract ZkAsset"
               }
             },
-            "id": 181,
+            "id": 221,
             "nodeType": "InheritanceSpecifier",
             "src": "432:7:3"
           }
         ],
         "contractDependencies": [
-          1786,
-          2499,
-          3071,
-          3151,
-          3326
+          1826,
+          2539,
+          3111,
+          3191,
+          3366
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 182,
+        "id": 222,
         "linearizedBaseContracts": [
-          182,
-          1786,
-          2499,
-          3326,
-          3071,
-          3151
+          222,
+          1826,
+          2539,
+          3366,
+          3111,
+          3191
         ],
         "name": "TestZkAsset",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 183,
+        "scope": 223,
         "src": "408:36:3"
       }
     ],
@@ -936,20 +936,20 @@
     "absolutePath": "/Users/e653788/aztec-ganache-starter-kit/contracts/TestERC20.sol",
     "exportedSymbols": {
       "TestERC20": [
-        176
+        216
       ],
       "TestZkAsset": [
-        182
+        222
       ],
       "TestZkAssetMintable": [
-        179
+        219
       ]
     },
-    "id": 183,
+    "id": 223,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 157,
+        "id": 197,
         "literals": [
           "solidity",
           ">=",
@@ -965,10 +965,10 @@
       {
         "absolutePath": "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol",
         "file": "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol",
-        "id": 158,
+        "id": 198,
         "nodeType": "ImportDirective",
-        "scope": 183,
-        "sourceUnit": 4160,
+        "scope": 223,
+        "sourceUnit": 4200,
         "src": "35:63:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -976,10 +976,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/ERC1724/ZkAssetMintable.sol",
         "file": "@aztec/protocol/contracts/ERC1724/ZkAssetMintable.sol",
-        "id": 159,
+        "id": 199,
         "nodeType": "ImportDirective",
-        "scope": 183,
-        "sourceUnit": 1814,
+        "scope": 223,
+        "sourceUnit": 1854,
         "src": "99:63:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -987,10 +987,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/ERC1724/ZkAsset.sol",
         "file": "@aztec/protocol/contracts/ERC1724/ZkAsset.sol",
-        "id": 160,
+        "id": 200,
         "nodeType": "ImportDirective",
-        "scope": 183,
-        "sourceUnit": 1787,
+        "scope": 223,
+        "sourceUnit": 1827,
         "src": "163:55:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1001,40 +1001,40 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 161,
+              "id": 201,
               "name": "ERC20",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 4159,
+              "referencedDeclaration": 4199,
               "src": "243:5:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20_$4159",
+                "typeIdentifier": "t_contract$_ERC20_$4199",
                 "typeString": "contract ERC20"
               }
             },
-            "id": 162,
+            "id": 202,
             "nodeType": "InheritanceSpecifier",
             "src": "243:5:3"
           }
         ],
         "contractDependencies": [
-          4159,
-          4228
+          4199,
+          4268
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 176,
+        "id": 216,
         "linearizedBaseContracts": [
-          176,
-          4159,
-          4228
+          216,
+          4199,
+          4268
         ],
         "name": "TestERC20",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 174,
+              "id": 214,
               "nodeType": "Block",
               "src": "316:34:3",
               "statements": [
@@ -1044,11 +1044,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 170,
+                        "id": 210,
                         "name": "_account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 164,
+                        "referencedDeclaration": 204,
                         "src": "328:8:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1057,11 +1057,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 171,
+                        "id": 211,
                         "name": "_value",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 166,
+                        "referencedDeclaration": 206,
                         "src": "338:6:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1080,18 +1080,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 169,
+                      "id": 209,
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4045,
+                      "referencedDeclaration": 4085,
                       "src": "322:5:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256)"
                       }
                     },
-                    "id": 172,
+                    "id": 212,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1105,29 +1105,29 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 173,
+                  "id": 213,
                   "nodeType": "ExpressionStatement",
                   "src": "322:23:3"
                 }
               ]
             },
             "documentation": null,
-            "id": 175,
+            "id": 215,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "giveMeTokens",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 167,
+              "id": 207,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 164,
+                  "id": 204,
                   "name": "_account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 175,
+                  "scope": 215,
                   "src": "275:16:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1136,7 +1136,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 163,
+                    "id": 203,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "275:7:3",
@@ -1151,10 +1151,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 166,
+                  "id": 206,
                   "name": "_value",
                   "nodeType": "VariableDeclaration",
-                  "scope": 175,
+                  "scope": 215,
                   "src": "293:14:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1163,7 +1163,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 165,
+                    "id": 205,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "293:7:3",
@@ -1179,19 +1179,19 @@
               "src": "274:34:3"
             },
             "returnParameters": {
-              "id": 168,
+              "id": 208,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "316:0:3"
             },
-            "scope": 176,
+            "scope": 216,
             "src": "253:97:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 183,
+        "scope": 223,
         "src": "221:131:3"
       },
       {
@@ -1200,50 +1200,50 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 177,
+              "id": 217,
               "name": "ZkAssetMintable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1813,
+              "referencedDeclaration": 1853,
               "src": "386:15:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ZkAssetMintable_$1813",
+                "typeIdentifier": "t_contract$_ZkAssetMintable_$1853",
                 "typeString": "contract ZkAssetMintable"
               }
             },
-            "id": 178,
+            "id": 218,
             "nodeType": "InheritanceSpecifier",
             "src": "386:15:3"
           }
         ],
         "contractDependencies": [
-          1813,
-          2499,
-          2866,
-          2997,
-          3071,
-          3151,
-          3326,
-          3762
+          1853,
+          2539,
+          2906,
+          3037,
+          3111,
+          3191,
+          3366,
+          3802
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 179,
+        "id": 219,
         "linearizedBaseContracts": [
-          179,
-          1813,
-          2866,
-          2997,
-          3762,
-          2499,
-          3326,
-          3071,
-          3151
+          219,
+          1853,
+          2906,
+          3037,
+          3802,
+          2539,
+          3366,
+          3111,
+          3191
         ],
         "name": "TestZkAssetMintable",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 183,
+        "scope": 223,
         "src": "354:52:3"
       },
       {
@@ -1252,44 +1252,44 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 180,
+              "id": 220,
               "name": "ZkAsset",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1786,
+              "referencedDeclaration": 1826,
               "src": "432:7:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ZkAsset_$1786",
+                "typeIdentifier": "t_contract$_ZkAsset_$1826",
                 "typeString": "contract ZkAsset"
               }
             },
-            "id": 181,
+            "id": 221,
             "nodeType": "InheritanceSpecifier",
             "src": "432:7:3"
           }
         ],
         "contractDependencies": [
-          1786,
-          2499,
-          3071,
-          3151,
-          3326
+          1826,
+          2539,
+          3111,
+          3191,
+          3366
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 182,
+        "id": 222,
         "linearizedBaseContracts": [
-          182,
-          1786,
-          2499,
-          3326,
-          3071,
-          3151
+          222,
+          1826,
+          2539,
+          3366,
+          3111,
+          3191
         ],
         "name": "TestZkAsset",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 183,
+        "scope": 223,
         "src": "408:36:3"
       }
     ],
@@ -1301,7 +1301,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.15",
-  "updatedAt": "2019-09-08T01:44:05.928Z",
+  "updatedAt": "2019-09-08T13:27:56.025Z",
   "devdoc": {
     "methods": {
       "confidentialApprove(bytes32,address,bool,bytes)": {

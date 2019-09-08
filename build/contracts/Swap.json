@@ -18,14 +18,14 @@
     "absolutePath": "@aztec/protocol/contracts/ACE/validators/swap/Swap.sol",
     "exportedSymbols": {
       "Swap": [
-        1752
+        1792
       ]
     },
-    "id": 1753,
+    "id": 1793,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1740,
+        "id": 1780,
         "literals": [
           "solidity",
           ">=",
@@ -41,10 +41,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/ACE/validators/swap/SwapABIEncoder.sol",
         "file": "./SwapABIEncoder.sol",
-        "id": 1741,
+        "id": 1781,
         "nodeType": "ImportDirective",
-        "scope": 1753,
-        "sourceUnit": 1761,
+        "scope": 1793,
+        "sourceUnit": 1801,
         "src": "33:30:16",
         "symbolAliases": [],
         "unitAlias": ""
@@ -55,22 +55,22 @@
         "contractKind": "contract",
         "documentation": "@title Library to validate Swap proofs\n@author AZTEC\n@dev Don't include this as an internal library. This contract uses\na static memory table to cache elliptic curve primitives and hashes.\nCalling this internally from another function will lead to memory\nmutation and undefined behaviour.\nThe intended use case is to call this externally via `staticcall`. External\ncalls to OptimizedAZTEC can be treated as pure functions as this contract\ncontains no storage and makes no external calls (other than to precompiles)\nCopyright Spilsbury Holdings Ltd 2019. All rights reserved.*",
         "fullyImplemented": true,
-        "id": 1752,
+        "id": 1792,
         "linearizedBaseContracts": [
-          1752
+          1792
         ],
         "name": "Swap",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 1750,
+              "id": 1790,
               "nodeType": "Block",
               "src": "1122:12070:16",
               "statements": [
                 {
                   "externalReferences": [],
-                  "id": 1744,
+                  "id": 1784,
                   "nodeType": "InlineAssembly",
                   "operations": "{\n    validateSwap()\n    mstore(0x40, 0x60)\n    function validateSwap()\n    {\n        mstore(0x80, calldataload(0x44))\n        mstore(0xa0, calldataload(0x64))\n        let notes := add(0x104, calldataload(0x144))\n        let n := calldataload(notes)\n        if iszero(eq(n, 0x04))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n        let gen_order := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001\n        let challenge := mod(calldataload(0x124), gen_order)\n        mstore(0x2e0, calldataload(0x24))\n        hashCommitments(notes, n)\n        let b := add(0x300, mul(n, 0x80))\n        for {\n            let i := 0\n        }\n        lt(i, n)\n        {\n            i := add(i, 0x01)\n        }\n        {\n            let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n            let k\n            let a := calldataload(add(noteIndex, 0x20))\n            let c := challenge\n            switch gt(i, 1)\n            case 1 {\n                k := calldataload(sub(noteIndex, 0x180))\n            }\n            case 0 {\n                k := calldataload(noteIndex)\n            }\n            validateCommitment(noteIndex, k, a)\n            calldatacopy(0xe0, add(noteIndex, 0x80), 0x40)\n            calldatacopy(0x20, add(noteIndex, 0x40), 0x40)\n            mstore(0x120, sub(gen_order, c))\n            mstore(0x60, k)\n            mstore(0xc0, a)\n            let result := staticcall(gas(), 7, 0xe0, 0x60, 0x1a0, 0x40)\n            result := and(result, staticcall(gas(), 7, 0x20, 0x60, 0x120, 0x40))\n            result := and(result, staticcall(gas(), 7, 0x80, 0x60, 0x160, 0x40))\n            result := and(result, staticcall(gas(), 6, 0x120, 0x80, 0x160, 0x40))\n            result := and(result, staticcall(gas(), 6, 0x160, 0x80, b, 0x40))\n            if iszero(result)\n            {\n                mstore(0x00, 400)\n                revert(0x00, 0x20)\n            }\n            b := add(b, 0x40)\n        }\n        let expected := mod(keccak256(0x2e0, sub(b, 0x2e0)), gen_order)\n        if iszero(eq(expected, challenge))\n        {\n            mstore(0x00, 404)\n            revert(0x00, 0x20)\n        }\n    }\n    function validateCommitment(note, k, a)\n    {\n        let gen_order := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001\n        let field_order := 0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47\n        let gammaX := calldataload(add(note, 0x40))\n        let gammaY := calldataload(add(note, 0x60))\n        let sigmaX := calldataload(add(note, 0x80))\n        let sigmaY := calldataload(add(note, 0xa0))\n        if iszero(and(and(and(eq(mod(a, gen_order), a), gt(a, 1)), and(eq(mod(k, gen_order), k), gt(k, 1))), and(eq(addmod(mulmod(mulmod(sigmaX, sigmaX, field_order), sigmaX, field_order), 3, field_order), mulmod(sigmaY, sigmaY, field_order)), eq(addmod(mulmod(mulmod(gammaX, gammaX, field_order), gammaX, field_order), 3, field_order), mulmod(gammaY, gammaY, field_order)))))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n    }\n    function hashCommitments(notes, n)\n    {\n        for {\n            let i := 0\n        }\n        lt(i, n)\n        {\n            i := add(i, 0x01)\n        }\n        {\n            let index := add(add(notes, mul(i, 0xc0)), 0x60)\n            calldatacopy(add(0x300, mul(i, 0x80)), index, 0x80)\n        }\n        mstore(0x00, keccak256(0x300, mul(n, 0x80)))\n    }\n}",
                   "src": "1132:12037:16"
@@ -83,32 +83,32 @@
                       "argumentTypes": [],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 1745,
+                        "id": 1785,
                         "name": "SwapABIEncoder",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1760,
+                        "referencedDeclaration": 1800,
                         "src": "13155:14:16",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_SwapABIEncoder_$1760_$",
+                          "typeIdentifier": "t_type$_t_contract$_SwapABIEncoder_$1800_$",
                           "typeString": "type(library SwapABIEncoder)"
                         }
                       },
-                      "id": 1747,
+                      "id": 1787,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "encodeAndExit",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1759,
+                      "referencedDeclaration": 1799,
                       "src": "13155:28:16",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$__$returns$__$",
                         "typeString": "function () pure"
                       }
                     },
-                    "id": 1748,
+                    "id": 1788,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -122,39 +122,39 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1749,
+                  "id": 1789,
                   "nodeType": "ExpressionStatement",
                   "src": "13155:30:16"
                 }
               ]
             },
             "documentation": "@dev Swap will take any transaction sent to it and attempt to validate a zero knowledge proof.\nIf the proof is not valid, the transaction throws.\n@notice See SwapInterface for how method calls should be constructed.\nThis contract is written in YUL to enable manual memory management and for other efficiency savings.*",
-            "id": 1751,
+            "id": 1791,
             "implemented": true,
             "kind": "fallback",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1742,
+              "id": 1782,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1110:2:16"
             },
             "returnParameters": {
-              "id": 1743,
+              "id": 1783,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1122:0:16"
             },
-            "scope": 1752,
+            "scope": 1792,
             "src": "1102:12090:16",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 1753,
+        "scope": 1793,
         "src": "679:12515:16"
       }
     ],
@@ -164,14 +164,14 @@
     "absolutePath": "@aztec/protocol/contracts/ACE/validators/swap/Swap.sol",
     "exportedSymbols": {
       "Swap": [
-        1752
+        1792
       ]
     },
-    "id": 1753,
+    "id": 1793,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1740,
+        "id": 1780,
         "literals": [
           "solidity",
           ">=",
@@ -187,10 +187,10 @@
       {
         "absolutePath": "@aztec/protocol/contracts/ACE/validators/swap/SwapABIEncoder.sol",
         "file": "./SwapABIEncoder.sol",
-        "id": 1741,
+        "id": 1781,
         "nodeType": "ImportDirective",
-        "scope": 1753,
-        "sourceUnit": 1761,
+        "scope": 1793,
+        "sourceUnit": 1801,
         "src": "33:30:16",
         "symbolAliases": [],
         "unitAlias": ""
@@ -201,22 +201,22 @@
         "contractKind": "contract",
         "documentation": "@title Library to validate Swap proofs\n@author AZTEC\n@dev Don't include this as an internal library. This contract uses\na static memory table to cache elliptic curve primitives and hashes.\nCalling this internally from another function will lead to memory\nmutation and undefined behaviour.\nThe intended use case is to call this externally via `staticcall`. External\ncalls to OptimizedAZTEC can be treated as pure functions as this contract\ncontains no storage and makes no external calls (other than to precompiles)\nCopyright Spilsbury Holdings Ltd 2019. All rights reserved.*",
         "fullyImplemented": true,
-        "id": 1752,
+        "id": 1792,
         "linearizedBaseContracts": [
-          1752
+          1792
         ],
         "name": "Swap",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 1750,
+              "id": 1790,
               "nodeType": "Block",
               "src": "1122:12070:16",
               "statements": [
                 {
                   "externalReferences": [],
-                  "id": 1744,
+                  "id": 1784,
                   "nodeType": "InlineAssembly",
                   "operations": "{\n    validateSwap()\n    mstore(0x40, 0x60)\n    function validateSwap()\n    {\n        mstore(0x80, calldataload(0x44))\n        mstore(0xa0, calldataload(0x64))\n        let notes := add(0x104, calldataload(0x144))\n        let n := calldataload(notes)\n        if iszero(eq(n, 0x04))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n        let gen_order := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001\n        let challenge := mod(calldataload(0x124), gen_order)\n        mstore(0x2e0, calldataload(0x24))\n        hashCommitments(notes, n)\n        let b := add(0x300, mul(n, 0x80))\n        for {\n            let i := 0\n        }\n        lt(i, n)\n        {\n            i := add(i, 0x01)\n        }\n        {\n            let noteIndex := add(add(notes, 0x20), mul(i, 0xc0))\n            let k\n            let a := calldataload(add(noteIndex, 0x20))\n            let c := challenge\n            switch gt(i, 1)\n            case 1 {\n                k := calldataload(sub(noteIndex, 0x180))\n            }\n            case 0 {\n                k := calldataload(noteIndex)\n            }\n            validateCommitment(noteIndex, k, a)\n            calldatacopy(0xe0, add(noteIndex, 0x80), 0x40)\n            calldatacopy(0x20, add(noteIndex, 0x40), 0x40)\n            mstore(0x120, sub(gen_order, c))\n            mstore(0x60, k)\n            mstore(0xc0, a)\n            let result := staticcall(gas(), 7, 0xe0, 0x60, 0x1a0, 0x40)\n            result := and(result, staticcall(gas(), 7, 0x20, 0x60, 0x120, 0x40))\n            result := and(result, staticcall(gas(), 7, 0x80, 0x60, 0x160, 0x40))\n            result := and(result, staticcall(gas(), 6, 0x120, 0x80, 0x160, 0x40))\n            result := and(result, staticcall(gas(), 6, 0x160, 0x80, b, 0x40))\n            if iszero(result)\n            {\n                mstore(0x00, 400)\n                revert(0x00, 0x20)\n            }\n            b := add(b, 0x40)\n        }\n        let expected := mod(keccak256(0x2e0, sub(b, 0x2e0)), gen_order)\n        if iszero(eq(expected, challenge))\n        {\n            mstore(0x00, 404)\n            revert(0x00, 0x20)\n        }\n    }\n    function validateCommitment(note, k, a)\n    {\n        let gen_order := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001\n        let field_order := 0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47\n        let gammaX := calldataload(add(note, 0x40))\n        let gammaY := calldataload(add(note, 0x60))\n        let sigmaX := calldataload(add(note, 0x80))\n        let sigmaY := calldataload(add(note, 0xa0))\n        if iszero(and(and(and(eq(mod(a, gen_order), a), gt(a, 1)), and(eq(mod(k, gen_order), k), gt(k, 1))), and(eq(addmod(mulmod(mulmod(sigmaX, sigmaX, field_order), sigmaX, field_order), 3, field_order), mulmod(sigmaY, sigmaY, field_order)), eq(addmod(mulmod(mulmod(gammaX, gammaX, field_order), gammaX, field_order), 3, field_order), mulmod(gammaY, gammaY, field_order)))))\n        {\n            mstore(0x00, 400)\n            revert(0x00, 0x20)\n        }\n    }\n    function hashCommitments(notes, n)\n    {\n        for {\n            let i := 0\n        }\n        lt(i, n)\n        {\n            i := add(i, 0x01)\n        }\n        {\n            let index := add(add(notes, mul(i, 0xc0)), 0x60)\n            calldatacopy(add(0x300, mul(i, 0x80)), index, 0x80)\n        }\n        mstore(0x00, keccak256(0x300, mul(n, 0x80)))\n    }\n}",
                   "src": "1132:12037:16"
@@ -229,32 +229,32 @@
                       "argumentTypes": [],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 1745,
+                        "id": 1785,
                         "name": "SwapABIEncoder",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1760,
+                        "referencedDeclaration": 1800,
                         "src": "13155:14:16",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_SwapABIEncoder_$1760_$",
+                          "typeIdentifier": "t_type$_t_contract$_SwapABIEncoder_$1800_$",
                           "typeString": "type(library SwapABIEncoder)"
                         }
                       },
-                      "id": 1747,
+                      "id": 1787,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "encodeAndExit",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1759,
+                      "referencedDeclaration": 1799,
                       "src": "13155:28:16",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$__$returns$__$",
                         "typeString": "function () pure"
                       }
                     },
-                    "id": 1748,
+                    "id": 1788,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -268,39 +268,39 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1749,
+                  "id": 1789,
                   "nodeType": "ExpressionStatement",
                   "src": "13155:30:16"
                 }
               ]
             },
             "documentation": "@dev Swap will take any transaction sent to it and attempt to validate a zero knowledge proof.\nIf the proof is not valid, the transaction throws.\n@notice See SwapInterface for how method calls should be constructed.\nThis contract is written in YUL to enable manual memory management and for other efficiency savings.*",
-            "id": 1751,
+            "id": 1791,
             "implemented": true,
             "kind": "fallback",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1742,
+              "id": 1782,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1110:2:16"
             },
             "returnParameters": {
-              "id": 1743,
+              "id": 1783,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1122:0:16"
             },
-            "scope": 1752,
+            "scope": 1792,
             "src": "1102:12090:16",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 1753,
+        "scope": 1793,
         "src": "679:12515:16"
       }
     ],
@@ -322,10 +322,16 @@
       "links": {},
       "address": "0x0924F04769C8A89BDB9a631295b839D1C2BD91E0",
       "transactionHash": "0x12c51546c79183a52c47e5b359b98b4a72c05aaca108663cd9474ce8566c96b3"
+    },
+    "1567943518950": {
+      "events": {},
+      "links": {},
+      "address": "0x328595297C98FEbDbDCC12320E658F6D411a4b1C",
+      "transactionHash": "0x530b4259e68a06639f6e0b5a627a3878d24c5d61f29be77f876dbd0e4aafc7e4"
     }
   },
   "schemaVersion": "3.0.15",
-  "updatedAt": "2019-09-08T01:44:16.023Z",
+  "updatedAt": "2019-09-08T13:28:09.350Z",
   "devdoc": {
     "author": "AZTEC",
     "details": "Don't include this as an internal library. This contract uses a static memory table to cache elliptic curve primitives and hashes. Calling this internally from another function will lead to memory mutation and undefined behaviour. The intended use case is to call this externally via `staticcall`. External calls to OptimizedAZTEC can be treated as pure functions as this contract contains no storage and makes no external calls (other than to precompiles) Copyright Spilsbury Holdings Ltd 2019. All rights reserved.*",

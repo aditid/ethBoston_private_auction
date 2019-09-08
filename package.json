@@ -34,6 +34,7 @@
     "ganache": "babel-node scripts/run ganache",
     "demo": "truffle test test/demo.js",
     "lottery": "truffle test test/lottery.js",
+    "lottery2": "truffle test test/lottery_private.js",
     "start": "npm run ganache"
   }
 }

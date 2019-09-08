@@ -16,4 +16,4 @@ A repository that helps dApp developers deploy AZTEC to a local blockchain.
 
 6. Deploy AZTEC! `yarn migrate`
 
-7. Run the private payment demo. `yarn lottery`
+7. Run the private payment demo. `yarn demo`

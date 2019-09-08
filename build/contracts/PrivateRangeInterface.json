@@ -40,14 +40,14 @@
     "absolutePath": "@aztec/protocol/contracts/interfaces/PrivateRangeInterface.sol",
     "exportedSymbols": {
       "PrivateRangeInterface": [
-        3208
+        3248
       ]
     },
-    "id": 3209,
+    "id": 3249,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3193,
+        "id": 3233,
         "literals": [
           "solidity",
           ">=",
@@ -66,37 +66,37 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 3208,
+        "id": 3248,
         "linearizedBaseContracts": [
-          3208
+          3248
         ],
         "name": "PrivateRangeInterface",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 3206,
+              "id": 3246,
               "nodeType": "Block",
               "src": "238:2:29",
               "statements": []
             },
             "documentation": null,
-            "id": 3207,
+            "id": 3247,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "validatePrivateRange",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3202,
+              "id": 3242,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3195,
+                  "id": 3235,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3207,
+                  "scope": 3247,
                   "src": "109:14:29",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -105,7 +105,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 3194,
+                    "id": 3234,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "109:5:29",
@@ -119,10 +119,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 3197,
+                  "id": 3237,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3207,
+                  "scope": 3247,
                   "src": "133:7:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -131,7 +131,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3196,
+                    "id": 3236,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "133:7:29",
@@ -146,10 +146,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 3201,
+                  "id": 3241,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3207,
+                  "scope": 3247,
                   "src": "150:16:29",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -159,7 +159,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 3198,
+                      "id": 3238,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
                       "src": "150:4:29",
@@ -168,11 +168,11 @@
                         "typeString": "uint256"
                       }
                     },
-                    "id": 3200,
+                    "id": 3240,
                     "length": {
                       "argumentTypes": null,
                       "hexValue": "36",
-                      "id": 3199,
+                      "id": 3239,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -201,15 +201,15 @@
               "src": "99:73:29"
             },
             "returnParameters": {
-              "id": 3205,
+              "id": 3245,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3204,
+                  "id": 3244,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3207,
+                  "scope": 3247,
                   "src": "220:12:29",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -218,7 +218,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 3203,
+                    "id": 3243,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "220:5:29",
@@ -233,14 +233,14 @@
               ],
               "src": "219:14:29"
             },
-            "scope": 3208,
+            "scope": 3248,
             "src": "70:170:29",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 3209,
+        "scope": 3249,
         "src": "33:209:29"
       }
     ],
@@ -250,14 +250,14 @@
     "absolutePath": "@aztec/protocol/contracts/interfaces/PrivateRangeInterface.sol",
     "exportedSymbols": {
       "PrivateRangeInterface": [
-        3208
+        3248
       ]
     },
-    "id": 3209,
+    "id": 3249,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3193,
+        "id": 3233,
         "literals": [
           "solidity",
           ">=",
@@ -276,37 +276,37 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 3208,
+        "id": 3248,
         "linearizedBaseContracts": [
-          3208
+          3248
         ],
         "name": "PrivateRangeInterface",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 3206,
+              "id": 3246,
               "nodeType": "Block",
               "src": "238:2:29",
               "statements": []
             },
             "documentation": null,
-            "id": 3207,
+            "id": 3247,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "validatePrivateRange",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3202,
+              "id": 3242,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3195,
+                  "id": 3235,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3207,
+                  "scope": 3247,
                   "src": "109:14:29",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -315,7 +315,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 3194,
+                    "id": 3234,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "109:5:29",
@@ -329,10 +329,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 3197,
+                  "id": 3237,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3207,
+                  "scope": 3247,
                   "src": "133:7:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -341,7 +341,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3196,
+                    "id": 3236,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "133:7:29",
@@ -356,10 +356,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 3201,
+                  "id": 3241,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3207,
+                  "scope": 3247,
                   "src": "150:16:29",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -369,7 +369,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 3198,
+                      "id": 3238,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
                       "src": "150:4:29",
@@ -378,11 +378,11 @@
                         "typeString": "uint256"
                       }
                     },
-                    "id": 3200,
+                    "id": 3240,
                     "length": {
                       "argumentTypes": null,
                       "hexValue": "36",
-                      "id": 3199,
+                      "id": 3239,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -411,15 +411,15 @@
               "src": "99:73:29"
             },
             "returnParameters": {
-              "id": 3205,
+              "id": 3245,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3204,
+                  "id": 3244,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3207,
+                  "scope": 3247,
                   "src": "220:12:29",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -428,7 +428,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 3203,
+                    "id": 3243,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "220:5:29",
@@ -443,14 +443,14 @@
               ],
               "src": "219:14:29"
             },
-            "scope": 3208,
+            "scope": 3248,
             "src": "70:170:29",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 3209,
+        "scope": 3249,
         "src": "33:209:29"
       }
     ],
@@ -462,7 +462,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.15",
-  "updatedAt": "2019-09-08T01:44:06.001Z",
+  "updatedAt": "2019-09-08T13:27:56.124Z",
   "devdoc": {
     "methods": {}
   },
