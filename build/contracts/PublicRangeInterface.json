@@ -1,0 +1,465 @@
+{
+  "contractName": "PublicRangeInterface",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "bytes"
+        },
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "uint256[6]"
+        }
+      ],
+      "name": "validatePublicRange",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "metadata": "",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n/**\n * @title PublicRangeInterface\n * @author AZTEC\n * @dev An interface for the Public Range validator contract\n * Copyright Spilsbury Holdings Ltd 2019. All rights reserved.\n **/\ninterface PublicRangeInterface {\n    /* solhint-disable-next-line var-name-mixedcase */\n    \n    function validatePublicRange(\n        bytes calldata, \n        address, \n        uint[6] calldata\n    ) external pure returns (bytes memory);\n}\n",
+  "sourcePath": "@aztec/protocol/contracts/interfaces/PublicRangeInterface.sol",
+  "ast": {
+    "absolutePath": "@aztec/protocol/contracts/interfaces/PublicRangeInterface.sol",
+    "exportedSymbols": {
+      "PublicRangeInterface": [
+        3224
+      ]
+    },
+    "id": 3225,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3210,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:30"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title PublicRangeInterface\n@author AZTEC\n@dev An interface for the Public Range validator contract\nCopyright Spilsbury Holdings Ltd 2019. All rights reserved.*",
+        "fullyImplemented": false,
+        "id": 3224,
+        "linearizedBaseContracts": [
+          3224
+        ],
+        "name": "PublicRangeInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 3223,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "validatePublicRange",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3219,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3212,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3223,
+                  "src": "349:14:30",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 3211,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "349:5:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3214,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3223,
+                  "src": "374:7:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3213,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "374:7:30",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3218,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3223,
+                  "src": "392:16:30",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$6_calldata_ptr",
+                    "typeString": "uint256[6]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 3215,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "392:4:30",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 3217,
+                    "length": {
+                      "argumentTypes": null,
+                      "hexValue": "36",
+                      "id": 3216,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "397:1:30",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": null,
+                        "typeString": null
+                      },
+                      "value": "6"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "392:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$6_storage_ptr",
+                      "typeString": "uint256[6]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "339:75:30"
+            },
+            "returnParameters": {
+              "id": 3222,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3221,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3223,
+                  "src": "438:12:30",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 3220,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "438:5:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "437:14:30"
+            },
+            "scope": 3224,
+            "src": "311:141:30",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3225,
+        "src": "214:240:30"
+      }
+    ],
+    "src": "0:455:30"
+  },
+  "legacyAST": {
+    "absolutePath": "@aztec/protocol/contracts/interfaces/PublicRangeInterface.sol",
+    "exportedSymbols": {
+      "PublicRangeInterface": [
+        3224
+      ]
+    },
+    "id": 3225,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3210,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:30"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title PublicRangeInterface\n@author AZTEC\n@dev An interface for the Public Range validator contract\nCopyright Spilsbury Holdings Ltd 2019. All rights reserved.*",
+        "fullyImplemented": false,
+        "id": 3224,
+        "linearizedBaseContracts": [
+          3224
+        ],
+        "name": "PublicRangeInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 3223,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "validatePublicRange",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3219,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3212,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3223,
+                  "src": "349:14:30",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 3211,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "349:5:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3214,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3223,
+                  "src": "374:7:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3213,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "374:7:30",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3218,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3223,
+                  "src": "392:16:30",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$6_calldata_ptr",
+                    "typeString": "uint256[6]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 3215,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "392:4:30",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 3217,
+                    "length": {
+                      "argumentTypes": null,
+                      "hexValue": "36",
+                      "id": 3216,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "397:1:30",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": null,
+                        "typeString": null
+                      },
+                      "value": "6"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "392:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$6_storage_ptr",
+                      "typeString": "uint256[6]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "339:75:30"
+            },
+            "returnParameters": {
+              "id": 3222,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3221,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3223,
+                  "src": "438:12:30",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 3220,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "438:5:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "437:14:30"
+            },
+            "scope": 3224,
+            "src": "311:141:30",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3225,
+        "src": "214:240:30"
+      }
+    ],
+    "src": "0:455:30"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.4+commit.9549d8ff.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.15",
+  "updatedAt": "2019-09-08T01:44:06.001Z",
+  "devdoc": {
+    "author": "AZTEC",
+    "details": "An interface for the Public Range validator contract Copyright Spilsbury Holdings Ltd 2019. All rights reserved.*",
+    "methods": {},
+    "title": "PublicRangeInterface"
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
