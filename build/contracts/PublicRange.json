@@ -342,12 +342,12 @@
     "1567943518950": {
       "events": {},
       "links": {},
-      "address": "0xA4f166490483C75ef443ACB0e2ea49bD1635ACdF",
-      "transactionHash": "0x03f64197a52943eeb7a8d4c6641f76e9d08d4b75cb5764a282ce0071ff501f0a"
+      "address": "0xbEb02a2Bf3586BeD790dd1C3BAC2C23Ca5E80868",
+      "transactionHash": "0xab7cfdbe3f101a823b2c9c4e952ed8d554ccce898c716459d1b33735209b8f5e"
     }
   },
   "schemaVersion": "3.0.15",
-  "updatedAt": "2019-09-08T13:28:09.359Z",
+  "updatedAt": "2019-09-08T13:32:05.495Z",
   "devdoc": {
     "author": "AZTEC",
     "details": "Library to validate AZTEC public range zero-knowledge proofs Don't include this as an internal library. This contract uses  a static memory table to cache elliptic curve primitives and hashes. Calling this internally from another function will lead to memory  mutation and undefined behaviour. The intended use case is to call this externally via `staticcall`. External  calls to OptimizedAZTEC can be treated as pure functions as this contract  contains no storage and makes no external calls (other than to precompiles) Copyright Spilsbury Holdings Ltd 2019. All rights reserved.*",

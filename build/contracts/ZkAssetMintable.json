@@ -1842,12 +1842,12 @@
         }
       },
       "links": {},
-      "address": "0x17123a8035761bFAd40cA166261d003b978b8314",
-      "transactionHash": "0x473f1b29ec4a66552b2a9b3e4162db04904cb7232b7404c000b562f43411840b"
+      "address": "0x28B1257AeC06d4EE929A53a8e15d44B028BAfDe8",
+      "transactionHash": "0x700e0785fc59a3045e97691c72a337c52fb8da17ce877b9d68d1af93d0cb095e"
     }
   },
   "schemaVersion": "3.0.15",
-  "updatedAt": "2019-09-08T13:28:10.413Z",
+  "updatedAt": "2019-09-08T13:32:06.550Z",
   "devdoc": {
     "author": "AZTEC",
     "details": "A contract defining the standard interface and behaviours of a mintable confidential asset. The ownership values and transfer values are encrypted. Copyright Spilsbury Holdings Ltd 2019. All rights reserved.*",

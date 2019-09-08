@@ -21871,12 +21871,12 @@
         }
       },
       "links": {},
-      "address": "0x793cb73afcA918FaD5BA0FF6C8EEA9EE9029f082",
-      "transactionHash": "0x8a44b4e8ad8008beef025cc7ef45eeb125619e3ec5bba1e8c339abc2c48df931"
+      "address": "0x445EB5Dc200039F61865962896b77906391630Cf",
+      "transactionHash": "0x97dec98ae9a04cfa950e441265aabd8b5f572e8d510ec8eff8faa66c25d1d6ed"
     }
   },
   "schemaVersion": "3.0.15",
-  "updatedAt": "2019-09-08T13:28:10.397Z",
+  "updatedAt": "2019-09-08T13:32:06.530Z",
   "devdoc": {
     "author": "AZTEC",
     "details": "ACE validates the AZTEC protocol's family of zero-knowledge proofs, which enables     digital asset builders to construct fungible confidential digital assets according to the AZTEC token standard. Copyright Spilsbury Holdings Ltd 2019. All rights reserved.*",

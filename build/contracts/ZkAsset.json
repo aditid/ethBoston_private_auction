@@ -1541,12 +1541,12 @@
         }
       },
       "links": {},
-      "address": "0xcE93CDbEB9fc37E99AA5D8a670f7A0B40920e1c4",
-      "transactionHash": "0x116f7fe826a0102d7bfd2137cf914c79e1b6dc6ababb54e775e31da56fbc82bf"
+      "address": "0x73C0D6eF478d8F4650139Fad9B6D0b700aaCF0A8",
+      "transactionHash": "0x1e9d47da9d2f5071e83e8afe74c093c4bd0c5ab70083e17b93b1e4a0c80b7b17"
     }
   },
   "schemaVersion": "3.0.15",
-  "updatedAt": "2019-09-08T13:28:10.408Z",
+  "updatedAt": "2019-09-08T13:32:06.543Z",
   "devdoc": {
     "author": "AZTEC",
     "details": "A contract defining the standard interface and behaviours of a confidential asset. The ownership values and transfer values are encrypted. Copyright Spilsbury Holdings Ltd 2019. All rights reserved.*",

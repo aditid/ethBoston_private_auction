@@ -568,9 +568,9 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity >= 0.5.0 <0.7.0;\n\n\nimport \"openzeppelin-solidity/contracts/token/ERC20/ERC20.sol\";\nimport \"@aztec/protocol/contracts/ERC1724/ZkAssetMintable.sol\";\nimport \"@aztec/protocol/contracts/ERC1724/ZkAsset.sol\";\n\n\ncontract TestERC20 is ERC20 {\n  function giveMeTokens(address _account, uint256 _value) public {\n    _mint(_account, _value);\n  }\n}\n\ncontract TestZkAssetMintable is ZkAssetMintable {\n\n}\n\ncontract TestZkAsset is ZkAsset {\n\n}\n",
-  "sourcePath": "/Users/e653788/aztec-ganache-starter-kit/contracts/TestERC20.sol",
+  "sourcePath": "/Users/e653788/ethBoston_private_auction/contracts/TestERC20.sol",
   "ast": {
-    "absolutePath": "/Users/e653788/aztec-ganache-starter-kit/contracts/TestERC20.sol",
+    "absolutePath": "/Users/e653788/ethBoston_private_auction/contracts/TestERC20.sol",
     "exportedSymbols": {
       "TestERC20": [
         216
@@ -933,7 +933,7 @@
     "src": "0:445:3"
   },
   "legacyAST": {
-    "absolutePath": "/Users/e653788/aztec-ganache-starter-kit/contracts/TestERC20.sol",
+    "absolutePath": "/Users/e653788/ethBoston_private_auction/contracts/TestERC20.sol",
     "exportedSymbols": {
       "TestERC20": [
         216
@@ -1301,7 +1301,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.15",
-  "updatedAt": "2019-09-08T13:27:56.025Z",
+  "updatedAt": "2019-09-08T13:31:51.551Z",
   "devdoc": {
     "methods": {
       "confidentialApprove(bytes32,address,bool,bytes)": {
